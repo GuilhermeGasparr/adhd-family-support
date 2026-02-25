@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 16,
+    marginBottom: 25,
+    elevation: 5,
   },
 
   title: {
