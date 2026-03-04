@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 16,
     marginBottom: 25,
-    elevation: 5,
+    elevation: 2,
   },
 
   title: {

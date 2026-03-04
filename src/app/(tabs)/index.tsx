@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: 1080,
     borderRadius: 12,
-    elevation: 5,
+    elevation: 2,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
