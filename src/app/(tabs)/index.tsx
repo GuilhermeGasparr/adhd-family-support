@@ -1,13 +1,16 @@
 import InfoCard from "@/components/InfoCard";
+import { useTranslation } from "react-i18next";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toolbar from "../../components/Toolbar";
 export default function Index() {
+  const { t } = useTranslation("Header");
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <Toolbar
-        title="TDAH Apoio"
-        subtitle="Informação e apoio para famílias"
+        title={t("title")}
+        subtitle={t("subtitle")}
         icon={require("../../assets/icon-home.png")}
         onMenuPress={() => console.log("Menu aberto")}
       />
@@ -25,8 +28,7 @@ export default function Index() {
               <View style={styles.textContainer}>
                 <Text style={styles.title}>Bem-vindo(a)!</Text>
                 <Text style={styles.subtitle}>
-                  Estamos aqui para apoiar você com informações confiáveis sobre
-                  TDAH em crianças.
+                  {t("text_welcome")}
                 </Text>
               </View>
             </View>
@@ -47,20 +49,32 @@ export default function Index() {
           <InfoCard
             title="O que é TDAH"
             subtitle="Entenda o transtorno e suas características principais"
-            onPress={() => console.log("Aqui abre as informações do transtorno")}
-            icon= "book-outline"
+            colorBg="#e2f6f9"
+            colorIcon="#24c4bc"
+            onPress={() =>
+              console.log("Aqui abre as informações do transtorno")
+            }
+            icon="book-outline"
           />
           <InfoCard
             title="Sintomas em crianças"
             subtitle="Identifique sinais comuns do TDAH infantil"
-            onPress={() => console.log("Aqui abre as informações do transtorno")}
-            icon= "heart-outline"
+            colorBg="#efbde0"
+            colorIcon="#cc2db9"
+            onPress={() =>
+              console.log("Aqui abre as informações do transtorno")
+            }
+            icon="heart-outline"
           />
           <InfoCard
             title="Cuidados no dia a dia"
             subtitle="Dicas práticas para a rotina familiar"
-            onPress={() => console.log("Aqui abre as informações do transtorno")}
-            icon= "bandage-outline"
+            colorBg="#f5d2aa"
+            colorIcon="#dc6d13"
+            onPress={() =>
+              console.log("Aqui abre as informações do transtorno")
+            }
+            icon="bandage-outline"
           />
         </View>
       </View>
@@ -70,6 +84,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    backgroundColor: "#FFF",
   },
   container: {
     flex: 1,
