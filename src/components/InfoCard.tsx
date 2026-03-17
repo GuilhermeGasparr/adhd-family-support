@@ -5,6 +5,8 @@ interface InfoCardProps {
   title: string;
   subtitle: string;
   icon?: keyof typeof Ionicons.glyphMap;
+  colorIcon: string;
+  colorBg: string;
   onPress?: () => void;
 }
 
@@ -12,12 +14,14 @@ export default function InfoCard({
   title,
   subtitle,
   icon = "information-circle-outline",
+  colorIcon,
+  colorBg,
   onPress,
 }: InfoCardProps) {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      <View style={styles.iconContainer}>
-        <Ionicons name={icon} size={22} color="#4A90E2" />
+      <View style={[styles.iconContainer, { backgroundColor: colorBg }]}>
+        <Ionicons name={icon} size={22} color={colorIcon}/>
       </View>
 
       <View style={styles.textContainer}>
@@ -47,8 +51,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     width: 44,
     height: 44,
-    borderRadius: 12,
-    backgroundColor: "#E6EEF9",
+    borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
     marginRight: 14,

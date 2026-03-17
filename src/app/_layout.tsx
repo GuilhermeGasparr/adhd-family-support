@@ -9,6 +9,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={({ route }) => {
+        
         const routeName = route.name.split("/").pop();
 
         const icons: Record<string, any> = {
@@ -31,6 +32,7 @@ export default function TabLayout() {
           tabBarLabel: labels[routeName ?? ""] ?? routeName,
 
           tabBarStyle: {
+            backgroundColor: "#FFF",
             height: Platform.OS === "web" ? 70 : 60 + insets.bottom,
             paddingBottom:
               Platform.OS === "web" ? 10 : insets.bottom,
