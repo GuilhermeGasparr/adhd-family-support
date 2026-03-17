@@ -1,16 +1,16 @@
 import InfoCard from "@/components/InfoCard";
+import "@/i18n";
 import { useTranslation } from "react-i18next";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toolbar from "../../components/Toolbar";
 export default function Index() {
-  const { t } = useTranslation("Header");
-
+  const { t } = useTranslation('translation');
   return (
     <SafeAreaView style={styles.safeArea}>
       <Toolbar
-        title={t("title")}
-        subtitle={t("subtitle")}
+        title={t("Header.title")}
+        subtitle={t("Header.subtitle")}
         icon={require("../../assets/icon-home.png")}
         onMenuPress={() => console.log("Menu aberto")}
       />
@@ -26,10 +26,8 @@ export default function Index() {
                 />
               </View>
               <View style={styles.textContainer}>
-                <Text style={styles.title}>Bem-vindo(a)!</Text>
-                <Text style={styles.subtitle}>
-                  {t("text_welcome")}
-                </Text>
+                <Text style={styles.title}>{t("Welcome.title_welcome")}</Text>
+                <Text style={styles.subtitle}></Text>
               </View>
             </View>
             <View style={styles.cardInfo}>
@@ -37,18 +35,15 @@ export default function Index() {
                 style={styles.bgInfo}
                 source={require("../../assets/icon-info.png")}
               ></Image>
-              <Text style={styles.textInfo}>
-                Este aplicativo é apenas informativo e não substitui
-                acompanhamento médico profissional.
-              </Text>
+              <Text style={styles.textInfo}>{t("Welcome.text_info")}</Text>
             </View>
           </View>
           <View>
-            <Text style={styles.exploreText}>Explore os conteúdos</Text>
+            <Text style={styles.exploreText}>{t("explore_text")}</Text>
           </View>
           <InfoCard
-            title="O que é TDAH"
-            subtitle="Entenda o transtorno e suas características principais"
+            title={t("InfoCards.title_info1")}
+            subtitle={t("InfoCards.subtitle_info1")}
             colorBg="#e2f6f9"
             colorIcon="#24c4bc"
             onPress={() =>
@@ -57,8 +52,8 @@ export default function Index() {
             icon="book-outline"
           />
           <InfoCard
-            title="Sintomas em crianças"
-            subtitle="Identifique sinais comuns do TDAH infantil"
+            title={t("InfoCards.title_info2")}
+            subtitle={t("InfoCards.subtitle_info2")}
             colorBg="#efbde0"
             colorIcon="#cc2db9"
             onPress={() =>
@@ -67,8 +62,8 @@ export default function Index() {
             icon="heart-outline"
           />
           <InfoCard
-            title="Cuidados no dia a dia"
-            subtitle="Dicas práticas para a rotina familiar"
+            title={t("InfoCards.title_info3")}
+            subtitle={t("InfoCards.subtitle_info3")}
             colorBg="#f5d2aa"
             colorIcon="#dc6d13"
             onPress={() =>
@@ -81,6 +76,7 @@ export default function Index() {
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,

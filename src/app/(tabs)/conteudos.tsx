@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import InfoCard from "@/components/InfoCard";
 import SearchBar from "@/components/SearchBar";
 import Toolbar from "@/components/Toolbar";
@@ -12,14 +13,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Conteudos() {
   const [search, setSearch] = useState("");
+  const { t } = useTranslation()
 
   const contents = [
     {
-      title: "Sintomas em Crianças",
-      subtitle: "Entenda os principais sintomas da condição",
+      title: t("InfoCards.title_info2"),
+      subtitle: t("InfoCards.subtitle_info2"),
       icon: "heart-outline",
       colorBg: "#c8edf5",
       colorIcon: "#0bbebb",
+    
     },
     {
       title: "Como procurar ajuda",

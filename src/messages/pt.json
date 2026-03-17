@@ -1,0 +1,20 @@
+{
+    "Header": {
+        "title": "TDAH Apoio",
+        "subtitle":  "Informação e apoio para famílias"   
+    },
+    "Welcome" : {
+        "title_welcome": "Bem-vindo(a)!",
+        "text_welcome" : "Estamos aqui para apoiar você com informações confiáveis sobre TDAH em crianças",
+        "text_info" : "Este aplicativo é apenas informativo e não substitui acompanhamento médico profissional"
+    },
+    "explore_text" : "Explore os conteúdos",
+    "InfoCards": {
+        "title_info1" : "O que é TDAH",
+        "subtitle_info1" : "Entenda o transtorno e suas características principais",
+        "title_info2" : "Sintomas em crianças",
+        "subtitle_info2" : "Identifique sinais comuns do TDAH infantil",
+        "title_info3" : "Cuidados no dia a dia",
+        "subtitle_info3" : "Dicas práticas para a rotina familiar"
+    }
+}
