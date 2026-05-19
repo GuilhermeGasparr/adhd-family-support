@@ -3,18 +3,12 @@ import { useTranslation } from "react-i18next";
 import InfoCard from "@/components/InfoCard";
 import SearchBar from "@/components/SearchBar";
 import Toolbar from "@/components/Toolbar";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { router } from "expo-router";
 export default function Conteudos() {
   const [search, setSearch] = useState("");
-  const { t } = useTranslation()
-
+  const { t } = useTranslation();
   const contents = [
     {
       title: t("InfoCards.title_info2"),
@@ -22,36 +16,53 @@ export default function Conteudos() {
       icon: "heart-outline",
       colorBg: "#c8edf5",
       colorIcon: "#0bbebb",
-    
+      // 3. Arrow function enviando o ID correspondente ao arquivo de dados
+      onPress: () =>
+        router.push({
+          pathname: "/DetailScreen",
+          params: { contentId: "whatIs" },
+        }),
     },
     {
       title: "Como procurar ajuda",
-      subtitle:
-        "Entenda como buscar a melhor ajuda para sua criança",
+      subtitle: "Entenda como buscar a melhor ajuda para sua criança",
       icon: "phone-portrait-outline",
       colorBg: "#d8f8d6",
       colorIcon: "#19850a",
+      onPress: () =>
+        router.push({
+          pathname: "/DetailScreen",
+          params: {contentId: "wantedHelp"}
+        })
     },
     {
       title: "Estratégias para o dia a dia",
-      subtitle:
-        "Saiba como criar uma rotina estruturada e leve para a criança",
+      subtitle: "Saiba como criar uma rotina estruturada e leve para a criança",
       icon: "stats-chart-outline",
       colorBg: "#f1cabc",
       colorIcon: "#ed6825",
+      onPress: () =>
+        router.push({
+          pathname: "/DetailScreen",
+          params: {contentId: "estrategies"}
+        })
     },
     {
       title: "Direitos da criança com TDAH",
-      subtitle:
-        "Informe-se dos direitos que sua criança têm",
+      subtitle: "Informe-se dos direitos que sua criança têm",
       icon: "journal-outline",
       colorBg: "#e4b9e0",
       colorIcon: "#a51091",
+      onPress: () =>
+        router.push({
+          pathname: "/DetailScreen",
+          params: {contentId: "directs"}
+        })
     },
   ];
 
   const filteredContents = contents.filter((item) =>
-    item.title.toLowerCase().includes(search.toLowerCase())
+    item.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -67,14 +78,9 @@ export default function Conteudos() {
         />
 
         <View style={styles.container}>
-          <SearchBar
-            value={search}
-            onChangeText={setSearch}
-          />
+          <SearchBar value={search} onChangeText={setSearch} />
 
-          <Text style={styles.browseContents}>
-            Browse Categories
-          </Text>
+          <Text style={styles.browseContents}>Browse Categories</Text>
 
           {filteredContents.length > 0 ? (
             filteredContents.map((item, index) => (
@@ -85,12 +91,11 @@ export default function Conteudos() {
                 icon={item.icon as any}
                 colorBg={item.colorBg}
                 colorIcon={item.colorIcon}
+                onPress={item.onPress} // 4. Repasse a função onPress para o seu componente customizado
               />
             ))
           ) : (
-            <Text style={styles.noResults}>
-              Nenhum resultado encontrado
-            </Text>
+            <Text style={styles.noResults}>Nenhum resultado encontrado</Text>
           )}
         </View>
       </ScrollView>
@@ -103,15 +108,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFF",
   },
-
   scrollContainer: {
     paddingBottom: 30,
   },
-
   container: {
     paddingHorizontal: 16,
   },
-
   browseContents: {
     fontSize: 18,
     fontWeight: "500",
@@ -119,7 +121,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
   },
-
   noResults: {
     textAlign: "center",
     marginTop: 40,

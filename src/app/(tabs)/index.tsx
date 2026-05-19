@@ -57,7 +57,7 @@ export default function Index() {
             colorBg="#efbde0"
             colorIcon="#cc2db9"
             onPress={() =>
-              console.log("Aqui abre as informações do transtorno")
+              navigation.navigate("Conteudos")
             }
             icon="heart-outline"
           />
