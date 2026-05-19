@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toolbar from "../../components/Toolbar";
+import { router } from "expo-router";
 export default function Index() {
   const { t } = useTranslation('translation');
   return (
@@ -47,7 +48,10 @@ export default function Index() {
             colorBg="#e2f6f9"
             colorIcon="#24c4bc"
             onPress={() =>
-              console.log("Aqui abre as informações do transtorno")
+              router.push({
+                pathname: "/details/[contentId]",
+                params: {contentId: "whatIs"}
+              })
             }
             icon="book-outline"
           />
@@ -57,7 +61,7 @@ export default function Index() {
             colorBg="#efbde0"
             colorIcon="#cc2db9"
             onPress={() =>
-              navigation.navigate("Conteudos")
+              null
             }
             icon="heart-outline"
           />

@@ -16,10 +16,9 @@ export default function Conteudos() {
       icon: "heart-outline",
       colorBg: "#c8edf5",
       colorIcon: "#0bbebb",
-      // 3. Arrow function enviando o ID correspondente ao arquivo de dados
       onPress: () =>
         router.push({
-          pathname: "/DetailScreen",
+          pathname: "/details/[contentId]",
           params: { contentId: "whatIs" },
         }),
     },
@@ -31,7 +30,7 @@ export default function Conteudos() {
       colorIcon: "#19850a",
       onPress: () =>
         router.push({
-          pathname: "/DetailScreen",
+          pathname: "/details/[contentId]",
           params: {contentId: "wantedHelp"}
         })
     },
@@ -43,7 +42,7 @@ export default function Conteudos() {
       colorIcon: "#ed6825",
       onPress: () =>
         router.push({
-          pathname: "/DetailScreen",
+          pathname: "/details/[contentId]",
           params: {contentId: "estrategies"}
         })
     },
@@ -55,7 +54,7 @@ export default function Conteudos() {
       colorIcon: "#a51091",
       onPress: () =>
         router.push({
-          pathname: "/DetailScreen",
+          pathname: "/details/[contentId]",
           params: {contentId: "directs"}
         })
     },
