@@ -1,13 +1,8 @@
 import { contentsData } from "@/messages/contentsData";
-import { useLocalSearchParams } from "expo-router";
+import { Feather } from "@expo/vector-icons";
+import { router, useLocalSearchParams } from "expo-router";
 import React from "react";
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function DetailScreen() {
   const { contentId } = useLocalSearchParams<{
@@ -25,11 +20,16 @@ export default function DetailScreen() {
   }
 
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.content}
-      showsVerticalScrollIndicator={false}
-    >
+    <View style={styles.container}>
+      <View style={styles.backButton}>
+        <Feather
+          name="arrow-left"
+          size={26}
+          color="#222"
+          onPress={() => router.back()}
+        />
+      </View>
+
       {data.image ? (
         <Image source={{ uri: data.image }} style={styles.image} />
       ) : (
@@ -42,13 +42,24 @@ export default function DetailScreen() {
         <Text style={styles.title}>{data.title}</Text>
         <Text style={styles.subtitle}>{data.subtitle}</Text>
 
-        {data.sections?.map((paragraph, index) => (
-          <Text key={index} style={styles.body}>
-            {paragraph}
-          </Text>
-        ))}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollContent}
+        >
+          {data.sections?.map((section, index) => (
+            <View key={index} style={styles.section}>
+              <Text style={styles.sectionTitle}>{section.heading}</Text>
+
+              {section.content.map((paragraph, pIndex) => (
+                <Text key={pIndex} style={styles.body}>
+                  {paragraph}
+                </Text>
+              ))}
+            </View>
+          ))}
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -56,10 +67,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F7F9FC",
-  },
-
-  content: {
-    paddingBottom: 40,
   },
 
   image: {
@@ -80,15 +87,18 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "#FFF",
-    marginTop: -25,
-    borderTopLeftRadius: 28,
-    borderTopRightRadius: 28,
-    padding: 24,
-    shadowOpacity: 0.08,
-    shadowRadius: 20,
-    elevation: 8,
-  },
+  backgroundColor: "#FFF",
+  marginHorizontal: 16,
+  marginTop: -30,
+  borderRadius: 28,
+  padding: 24,
+  maxHeight: "70%",
+  minHeight: "55%",
+  shadowOpacity: 0.08,
+  shadowRadius: 20,
+  elevation: 8,
+},
+
 
   title: {
     fontSize: 28,
@@ -100,8 +110,23 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: "#777",
-    marginBottom: 24,
+    marginBottom: 20,
     lineHeight: 24,
+  },
+
+  scrollContent: {
+    paddingBottom: 30,
+  },
+
+  section: {
+    marginBottom: 28,
+  },
+
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#222",
+    marginBottom: 14,
   },
 
   body: {
@@ -115,5 +140,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  backButton: {
+    position: "absolute",
+    top: 50,
+    left: 16,
+    zIndex: 10,
+    backgroundColor: "#FFF",
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    elevation: 6,
   },
 });
