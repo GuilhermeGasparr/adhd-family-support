@@ -19,11 +19,11 @@ export default function Conteudos() {
       onPress: () =>
         router.push({
           pathname: "/details/[contentId]",
-          params: { contentId: "whatIs" },
+          params: { contentId: "conditionDiagnosis" },
         }),
     },
     {
-      title: "Como procurar ajuda",
+      title: "Informações sobre Tratamento",
       subtitle: "Entenda como buscar a melhor ajuda para sua criança",
       icon: "phone-portrait-outline",
       colorBg: "#d8f8d6",
@@ -31,7 +31,7 @@ export default function Conteudos() {
       onPress: () =>
         router.push({
           pathname: "/details/[contentId]",
-          params: {contentId: "wantedHelp"}
+          params: {contentId: "treatment"}
         })
     },
     {
@@ -47,15 +47,15 @@ export default function Conteudos() {
         })
     },
     {
-      title: "Direitos da criança com TDAH",
-      subtitle: "Informe-se dos direitos que sua criança têm",
+      title: "Orientações Práticas para a Família",
+      subtitle: "Saiba como lidar com sua criança no cotidiano",
       icon: "journal-outline",
       colorBg: "#e4b9e0",
       colorIcon: "#a51091",
       onPress: () =>
         router.push({
           pathname: "/details/[contentId]",
-          params: {contentId: "directs"}
+          params: {contentId: "practicalGuidelines"}
         })
     },
   ];

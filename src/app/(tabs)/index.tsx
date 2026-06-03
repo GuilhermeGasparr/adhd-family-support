@@ -61,7 +61,10 @@ export default function Index() {
             colorBg="#efbde0"
             colorIcon="#cc2db9"
             onPress={() =>
-              null
+              router.push({
+                pathname: "/details/[contentId]",
+                params: {contentId: "conditionDiagnosis"}
+              })
             }
             icon="heart-outline"
           />
@@ -71,7 +74,10 @@ export default function Index() {
             colorBg="#f5d2aa"
             colorIcon="#dc6d13"
             onPress={() =>
-              console.log("Aqui abre as informações do transtorno")
+              router.push({
+                pathname: "/details/[contentId]",
+                params: {contentId: "estrategies"}
+              })
             }
             icon="bandage-outline"
           />
