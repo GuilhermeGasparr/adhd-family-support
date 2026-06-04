@@ -26,8 +26,8 @@ export default function Conteudos() {
       title: "Informações sobre Tratamento",
       subtitle: "Entenda como buscar a melhor ajuda para sua criança",
       icon: "phone-portrait-outline",
-      colorBg: "#d8f8d6",
-      colorIcon: "#19850a",
+      colorBg: "#feddafdf",
+      colorIcon: "#b17617",
       onPress: () =>
         router.push({
           pathname: "/details/[contentId]",
@@ -56,6 +56,30 @@ export default function Conteudos() {
         router.push({
           pathname: "/details/[contentId]",
           params: {contentId: "practicalGuidelines"}
+        })
+    },
+    {
+      title: "Alertas e Sinais de Gravidade",
+      subtitle: "Perceba quando a situação se torna mais grave",
+      icon: "warning",
+      colorBg: "#f09475",
+      colorIcon: "#e72514",
+      onPress: () =>
+        router.push({
+          pathname: "/details/[contentId]",
+          params: {contentId: "alerts"}
+        })
+    },
+    {
+      title: "Comorbidades",
+      subtitle: "Identifique as principais comorbidades de uma criança com a condição",
+      icon: "alert",
+      colorBg: "#7581f0",
+      colorIcon: "#0b2670",
+      onPress: () =>
+        router.push({
+          pathname: "/details/[contentId]",
+          params: {contentId: "comorbidities"}
         })
     },
   ];
