@@ -89,15 +89,21 @@ export const contentsData: Record<string, ContentItem> = {
       },
       {
         heading: "O que significa TDAH combinado ?",
-        content: ["É quando há presença significativa de sintomas tanto de desatenção quanto de hiperatividade/impulsividade, com impacto no funcionamento."],
+        content: [
+          "É quando há presença significativa de sintomas tanto de desatenção quanto de hiperatividade/impulsividade, com impacto no funcionamento.",
+        ],
       },
       {
         heading: "O tipo desatento é menos grave ?",
-        content: ["Não necessariamente. Pode causar prejuízo importante, especialmente no desempenho acadêmico, organização e autonomia."],
-      },   
+        content: [
+          "Não necessariamente. Pode causar prejuízo importante, especialmente no desempenho acadêmico, organização e autonomia.",
+        ],
+      },
       {
         heading: "Os sintomas variam ao longo do dia ?",
-        content: ["Sim. Podem oscilar conforme o nível de cansaço, demandas cognitivas, ambiente e estrutura disponível."],
+        content: [
+          "Sim. Podem oscilar conforme o nível de cansaço, demandas cognitivas, ambiente e estrutura disponível.",
+        ],
       },
       {
         heading: "",
@@ -163,47 +169,117 @@ export const contentsData: Record<string, ContentItem> = {
       },
       {
         heading: "Quantos sintomas são necessários para o diagnóstico ?",
-        content: ["O diagnóstico considera a presença de vários sintomas persistentes de desatenção e/ou hiperatividade-impulsividade, geralmente por pelo menos 6 meses, em mais de um contexto (como casa e escola), com prejuízo funcional significativo. O número de sintomas exigido varia com a idade, e a avaliação deve ser realizada por profissional qualificado."],
+        content: [
+          "O diagnóstico considera a presença de vários sintomas persistentes de desatenção e/ou hiperatividade-impulsividade, geralmente por pelo menos 6 meses, em mais de um contexto (como casa e escola), com prejuízo funcional significativo. O número de sintomas exigido varia com a idade, e a avaliação deve ser realizada por profissional qualificado.",
+        ],
       },
       {
         heading: "Precisa ocorrer em mais de um ambiente ?",
-        content: ["Sim. Os sintomas devem estar presentes em pelo menos dois contextos (como casa e escola) e de forma consistente, o que ajuda a diferenciar dificuldades situacionais de um padrão mais amplo de funcionamento."],
+        content: [
+          "Sim. Os sintomas devem estar presentes em pelo menos dois contextos (como casa e escola) e de forma consistente, o que ajuda a diferenciar dificuldades situacionais de um padrão mais amplo de funcionamento.",
+        ],
       },
       {
         heading: "Por quanto tempo os sintomas devem existir ?",
-        content: ["Devem persistir por, no mínimo, 6 meses, com frequência e intensidade suficientes para causar prejuízo real no dia a dia da criança."],
+        content: [
+          "Devem persistir por, no mínimo, 6 meses, com frequência e intensidade suficientes para causar prejuízo real no dia a dia da criança.",
+        ],
       },
       {
         heading: "Pode ser apenas ansiedade ?",
-        content: ["Pode. Alguns sintomas, como inquietação, distração e dificuldade de concentração, podem ocorrer tanto na ansiedade quanto no TDAH. Por isso, é essencial uma avaliação profissional cuidadosa para diferenciar as condições ou identificar quando elas coexistem."],
+        content: [
+          "Pode. Alguns sintomas, como inquietação, distração e dificuldade de concentração, podem ocorrer tanto na ansiedade quanto no TDAH. Por isso, é essencial uma avaliação profissional cuidadosa para diferenciar as condições ou identificar quando elas coexistem.",
+        ],
       },
       {
         heading: "Pode ser apenas falta de sono ?",
-        content: ["O sono insuficiente ou de má qualidade pode causar sintomas semelhantes ao TDAH, como desatenção, irritabilidade e agitação. Por isso, é importante avaliar e corrigir o sono antes ou junto da investigação, com orientação de um profissional de saúde."],
+        content: [
+          "O sono insuficiente ou de má qualidade pode causar sintomas semelhantes ao TDAH, como desatenção, irritabilidade e agitação. Por isso, é importante avaliar e corrigir o sono antes ou junto da investigação, com orientação de um profissional de saúde.",
+        ],
       },
       {
         heading: "Questionários ajudam no diagnóstico ?",
-        content: ["Sim. Escalas e questionários padronizados ajudam a organizar informações de pais e professores, identificar padrões de sintomas e monitorar evolução. Não substituem a avaliação clínica completa."],
+        content: [
+          "Sim. Escalas e questionários padronizados ajudam a organizar informações de pais e professores, identificar padrões de sintomas e monitorar evolução. Não substituem a avaliação clínica completa.",
+        ],
       },
       {
         heading: "A história familiar é importante ?",
-        content: ["Sim. O TDAH tem forte componente hereditário; histórico familiar aumenta a probabilidade e orienta a investigação.          "],
+        content: [
+          "Sim. O TDAH tem forte componente hereditário; histórico familiar aumenta a probabilidade e orienta a investigação.          ",
+        ],
       },
       {
         heading: "Relatórios escolares são necessários ?",
-        content: ["Ajudam muito. Informações da escola permitem avaliar o comportamento em outro contexto, identificar prejuízos acadêmicos e orientar intervenções."],
+        content: [
+          "Ajudam muito. Informações da escola permitem avaliar o comportamento em outro contexto, identificar prejuízos acadêmicos e orientar intervenções.",
+        ],
       },
       {
         heading: "Adultos também podem ter TDAH ?",
-        content: ["Sim. Em muitos casos, os sintomas persistem na adolescência e vida adulta, especialmente desatenção, desorganização e dificuldades de planejamento."],
+        content: [
+          "Sim. Em muitos casos, os sintomas persistem na adolescência e vida adulta, especialmente desatenção, desorganização e dificuldades de planejamento.",
+        ],
       },
       {
         heading: "Psicólogo pode diagnosticar ?",
-        content: ["Pode realizar avaliação clínica detalhada e contribuir para o diagnóstico. Idealmente, o processo envolve profissionais de saúde qualificados, podendo incluir abordagem multiprofissional."],
+        content: [
+          "Pode realizar avaliação clínica detalhada e contribuir para o diagnóstico. Idealmente, o processo envolve profissionais de saúde qualificados, podendo incluir abordagem multiprofissional.",
+        ],
+      },
+      {
+        heading: "Questionários como auxiliadores no Diagnóstico",
+        content: [
+          "Escalas e questionários padronizados ajudam a organizar informações de pais e professores, identificar padrões de sintomas e monitorar evolução. Não substituem a avaliação clínica completa .",
+        ],
+      },
+      {
+        heading: "Psicólogo pode diagnosticar ?",
+        content: [
+          "Pode realizar avaliação clínica detalhada e contribuir para o diagnóstico. Idealmente, o processo envolve profissionais de saúde qualificados, podendo incluir abordagem multiprofissional .",
+        ],
       },
       {
         heading: "Como classificar leve, moderado ou grave ?",
-        content: ["Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar."],
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
+      },
+      {
+        heading: "Como classificar leve, moderado ou grave ?",
+        content: [
+          "Considera-se a quantidade de sintomas, sua intensidade e, principalmente, o grau de prejuízo funcional nas áreas acadêmica, social e familiar.",
+        ],
       },
     ],
   },
@@ -574,155 +650,237 @@ export const contentsData: Record<string, ContentItem> = {
       },
       {
         heading: "Pais precisam de apoio ?",
-        content: ["Sim. Orientação estruturada, psicoeducação e intervenções baseadas em evidência ajudam os pais a aplicar estratégias eficazes, reduzindo conflitos e melhorando os resultados."],
+        content: [
+          "Sim. Orientação estruturada, psicoeducação e intervenções baseadas em evidência ajudam os pais a aplicar estratégias eficazes, reduzindo conflitos e melhorando os resultados.",
+        ],
       },
       {
         heading: "Informação no Apoio aos pais",
-        content: ["Quando os pais compreendem o funcionamento do TDAH, conseguem ajustar expectativas, կիրառar estratégias consistentes e aderir melhor ao tratamento, o que melhora o prognóstico."],
+        content: [
+          "Quando os pais compreendem o funcionamento do TDAH, conseguem ajustar expectativas, կիրառar estratégias consistentes e aderir melhor ao tratamento, o que melhora o prognóstico.",
+        ],
       },
       {
         heading: "Estratégias consistentes ajudam ?",
-        content: ["Sim. A consistência na aplicação de regras, rotinas e reforços é um dos fatores mais importantes para o sucesso das intervenções comportamentais e para a redução dos sintomas e prejuízos funcionais."],
+        content: [
+          "Sim. A consistência na aplicação de regras, rotinas e reforços é um dos fatores mais importantes para o sucesso das intervenções comportamentais e para a redução dos sintomas e prejuízos funcionais.",
+        ],
       },
       {
         heading: "Melhoras comportamentais são imediatas ?",
-        content: ["Nem sempre. Intervenções comportamentais costumam ter efeito progressivo e dependem de prática consistente ao longo do tempo. Já alguns tratamentos, como medicação quando indicada, podem ter efeito mais rápido, mas geralmente exigem ajustes para melhor resultado."],
+        content: [
+          "Nem sempre. Intervenções comportamentais costumam ter efeito progressivo e dependem de prática consistente ao longo do tempo. Já alguns tratamentos, como medicação quando indicada, podem ter efeito mais rápido, mas geralmente exigem ajustes para melhor resultado.",
+        ],
       },
       {
         heading: "Seguir tratamento é importante ?",
-        content: ["Sim. A adesão ao plano terapêutico está associada à redução dos sintomas e melhora do funcionamento acadêmico, social e familiar, além de impacto positivo na autoestima."],
+        content: [
+          "Sim. A adesão ao plano terapêutico está associada à redução dos sintomas e melhora do funcionamento acadêmico, social e familiar, além de impacto positivo na autoestima.",
+        ],
       },
       {
         heading: "Como manter consistência nas regras ?",
-        content: ["Definindo poucas regras, claras e objetivas, combinadas previamente e aplicadas de forma previsível. A consistência entre cuidadores é fundamental para aumentar a eficácia."],
+        content: [
+          "Definindo poucas regras, claras e objetivas, combinadas previamente e aplicadas de forma previsível. A consistência entre cuidadores é fundamental para aumentar a eficácia.",
+        ],
       },
       {
         heading: "Gritar ajuda no controle do comportamento ?",
-        content: ["Não. Pode aumentar a reatividade emocional, piorar o comportamento e prejudicar o vínculo. Estratégias baseadas em orientação clara, calma e consistente são mais eficazes."],
+        content: [
+          "Não. Pode aumentar a reatividade emocional, piorar o comportamento e prejudicar o vínculo. Estratégias baseadas em orientação clara, calma e consistente são mais eficazes.",
+        ],
       },
       {
         heading: "Repetição como auxiliar no aprendizado",
-        content: ["A repetição, associada a reforço positivo e feedback imediato, favorece a consolidação de comportamentos e habilidades."], 
+        content: [
+          "A repetição, associada a reforço positivo e feedback imediato, favorece a consolidação de comportamentos e habilidades.",
+        ],
       },
       {
         heading: "Comparação com outras crianças",
-        content: ["Comparações negativas tendem a reduzir a autoestima e a motivação. O mais eficaz é focar no progresso individual da criança."],
+        content: [
+          "Comparações negativas tendem a reduzir a autoestima e a motivação. O mais eficaz é focar no progresso individual da criança.",
+        ],
       },
       {
         heading: "Grupos de apoio para auxílio dos pais",
-        content: ["Sim. Promovem troca de experiências, suporte emocional e maior adesão a estratégias baseadas em evidência."],
+        content: [
+          "Sim. Promovem troca de experiências, suporte emocional e maior adesão a estratégias baseadas em evidência.",
+        ],
       },
       {
         heading: "Ser firme ajuda ?",
-        content: ["Sim. Uma postura firme, previsível e consistente, combinada com acolhimento, facilita o entendimento de limites e expectativas."],
+        content: [
+          "Sim. Uma postura firme, previsível e consistente, combinada com acolhimento, facilita o entendimento de limites e expectativas.",
+        ],
       },
       {
         heading: "Superproteger ajuda ?",
-        content: ["Não. Pode limitar o desenvolvimento da autonomia. O ideal é oferecer suporte gradual, incentivando independência conforme a capacidade da criança."],
+        content: [
+          "Não. Pode limitar o desenvolvimento da autonomia. O ideal é oferecer suporte gradual, incentivando independência conforme a capacidade da criança.",
+        ],
       },
       {
         heading: "Dar feedback imediato ajuda ?",
-        content: ["Sim. Feedback claro e imediato aumenta a compreensão, fortalece o comportamento adequado e melhora o aprendizado."],
+        content: [
+          "Sim. Feedback claro e imediato aumenta a compreensão, fortalece o comportamento adequado e melhora o aprendizado.",
+        ],
       },
       {
         heading: "Planejar a semana ajuda ?",
-        content: ["Sim. O planejamento semanal, com horários definidos e apoio visual, melhora a organização, reduz esquecimentos e facilita a antecipação de tarefas e compromissos."],
+        content: [
+          "Sim. O planejamento semanal, com horários definidos e apoio visual, melhora a organização, reduz esquecimentos e facilita a antecipação de tarefas e compromissos.",
+        ],
       },
       {
         heading: "Progresso Gradual da Criança",
-        content: ["Sim. As melhorias costumam ocorrer de forma progressiva e dependem de consistência nas estratégias, acompanhamento e ajustes ao longo do tempo."],
+        content: [
+          "Sim. As melhorias costumam ocorrer de forma progressiva e dependem de consistência nas estratégias, acompanhamento e ajustes ao longo do tempo.",
+        ],
       },
       {
         heading: "Crianças com TDAH precisam de rotina rígida ?",
-        content: ["Precisam de rotina estruturada e previsível, mas com flexibilidade planejada. Estrutura dá segurança; flexibilidade ajuda a lidar com imprevistos sem aumentar a desorganização."],
+        content: [
+          "Precisam de rotina estruturada e previsível, mas com flexibilidade planejada. Estrutura dá segurança; flexibilidade ajuda a lidar com imprevistos sem aumentar a desorganização.",
+        ],
       },
       {
         heading: "Antecipar mudanças ajuda ?",
-        content: ["Sim. Avisar previamente sobre mudanças na rotina reduz ansiedade, melhora a adaptação e diminui comportamentos desorganizados."],
+        content: [
+          "Sim. Avisar previamente sobre mudanças na rotina reduz ansiedade, melhora a adaptação e diminui comportamentos desorganizados.",
+        ],
       },
       {
         heading: "Elogio verbal funciona ?",
-        content: ["Sim. É mais eficaz quando imediato, específico e focado no comportamento (“você guardou seus materiais sem ajuda, muito bem”)."],
+        content: [
+          "Sim. É mais eficaz quando imediato, específico e focado no comportamento (“você guardou seus materiais sem ajuda, muito bem”).",
+        ],
       },
       {
         heading: "Recompensas devem ser frequentes ?",
-        content: ["Sim, especialmente no início das intervenções comportamentais. A frequência pode ser reduzida gradualmente conforme o comportamento se consolida."],
+        content: [
+          "Sim, especialmente no início das intervenções comportamentais. A frequência pode ser reduzida gradualmente conforme o comportamento se consolida.",
+        ],
       },
       {
         heading: "Ignorar sempre é adequado ?",
-        content: ["Não. A retirada de atenção deve ser usada apenas para comportamentos leves e que buscam atenção. Comportamentos importantes ou de risco exigem intervenção direta."],
+        content: [
+          "Não. A retirada de atenção deve ser usada apenas para comportamentos leves e que buscam atenção. Comportamentos importantes ou de risco exigem intervenção direta.",
+        ],
       },
       {
         heading: "Consequências devem ser imediatas ?",
-        content: ["Sim. Consequências próximas ao comportamento aumentam a associação entre ação e resultado, tornando a estratégia mais eficaz."],
+        content: [
+          "Sim. Consequências próximas ao comportamento aumentam a associação entre ação e resultado, tornando a estratégia mais eficaz.",
+        ],
       },
       {
         heading: "Falar olhando nos olhos ajuda sempre ?",
-        content: ["Pode ajudar a aumentar a atenção da criança no momento da orientação, mas geralmente funciona melhor quando combinado com instruções curtas, claras, objetivas e dadas uma etapa de cada vez. Reduzir distrações e pedir que a criança repita o que entendeu também pode facilitar a compreensão e execução da tarefa."],
+        content: [
+          "Pode ajudar a aumentar a atenção da criança no momento da orientação, mas geralmente funciona melhor quando combinado com instruções curtas, claras, objetivas e dadas uma etapa de cada vez. Reduzir distrações e pedir que a criança repita o que entendeu também pode facilitar a compreensão e execução da tarefa.",
+        ],
       },
       {
         heading: "Repetir instruções é necessário ?",
-        content: ["Sim. A repetição, associada a linguagem clara e verificação de compreensão, ajuda a consolidar o entendimento, especialmente quando combinada com apoio visual ou demonstração prática."],
+        content: [
+          "Sim. A repetição, associada a linguagem clara e verificação de compreensão, ajuda a consolidar o entendimento, especialmente quando combinada com apoio visual ou demonstração prática.",
+        ],
       },
       {
         heading: "Estudo em pequenos blocos de tempo",
-        content: ["Períodos curtos de estudo, intercalados com pausas, favorecem a manutenção da atenção e aumentam a produtividade."],
+        content: [
+          "Períodos curtos de estudo, intercalados com pausas, favorecem a manutenção da atenção e aumentam a produtividade.",
+        ],
       },
       {
         heading: "Pausas programadas nos estudos",
-        content: ["Sim. Pausas breves e planejadas ajudam a prevenir fadiga mental, melhorar o autocontrole e manter o engajamento nas tarefas."],
+        content: [
+          "Sim. Pausas breves e planejadas ajudam a prevenir fadiga mental, melhorar o autocontrole e manter o engajamento nas tarefas.",
+        ],
       },
       {
         heading: "Sentar na frente da sala ajuda ?",
-        content: ["Sim. Reduz estímulos distratores e facilita o acesso às instruções do professor, melhorando o foco e a participação."],
+        content: [
+          "Sim. Reduz estímulos distratores e facilita o acesso às instruções do professor, melhorando o foco e a participação.",
+        ],
       },
       {
         heading: "Adaptações feitas pelo professor na sala de aula",
-        content: ["Sim. Adaptações como instruções mais objetivas, divisão de atividades e apoio na organização aumentam a chance de sucesso acadêmico."],
+        content: [
+          "Sim. Adaptações como instruções mais objetivas, divisão de atividades e apoio na organização aumentam a chance de sucesso acadêmico.",
+        ],
       },
       {
         heading: "Reduzir carga de tarefa ajuda ?",
-        content: ["Em alguns casos, sim. Ajustar a quantidade, mantendo os objetivos de aprendizagem, pode evitar sobrecarga e melhorar a qualidade da execução."],
+        content: [
+          "Em alguns casos, sim. Ajustar a quantidade, mantendo os objetivos de aprendizagem, pode evitar sobrecarga e melhorar a qualidade da execução.",
+        ],
       },
       {
         heading: "Tempo extra em provas é indicado ?",
-        content: ["Pode ser. Quando há dificuldade de atenção e processamento, o tempo adicional permite demonstrar melhor o conhecimento."],
+        content: [
+          "Pode ser. Quando há dificuldade de atenção e processamento, o tempo adicional permite demonstrar melhor o conhecimento.",
+        ],
       },
       {
         heading: "Agenda escolar no auxílio da Criança",
-        content: ["Sim. O uso de agenda auxilia no planejamento, organização e acompanhamento de tarefas e prazos."],
+        content: [
+          "Sim. O uso de agenda auxilia no planejamento, organização e acompanhamento de tarefas e prazos.",
+        ],
       },
       {
         heading: "Checklists são úteis?",
-        content: ["Sim. Listas estruturadas ajudam na execução passo a passo, reduzem esquecimentos e aumentam a autonomia."],
+        content: [
+          "Sim. Listas estruturadas ajudam na execução passo a passo, reduzem esquecimentos e aumentam a autonomia.",
+        ],
       },
       {
         heading: "Técnicas de respiração ajudam ?",
-        content: ["Sim. Estratégias simples de respiração auxiliam na regulação emocional, reduzindo impulsividade e reatividade."],
+        content: [
+          "Sim. Estratégias simples de respiração auxiliam na regulação emocional, reduzindo impulsividade e reatividade.",
+        ],
       },
       {
         heading: "Nomear emoções é útil?",
-        content: ["Sim. Identificar e nomear emoções favorece o autocontrole, melhora a comunicação e contribui para respostas mais adaptativas."],
+        content: [
+          "Sim. Identificar e nomear emoções favorece o autocontrole, melhora a comunicação e contribui para respostas mais adaptativas.",
+        ],
       },
       {
         heading: "Rotina de sono deve ser fixa ?",
-        content: ["Sim. Identificar e nomear emoções favorece o autocontrole, melhora a comunicação e contribui para respostas mais adaptativas."],
+        content: [
+          "Sim. Identificar e nomear emoções favorece o autocontrole, melhora a comunicação e contribui para respostas mais adaptativas.",
+        ],
       },
       {
         heading: "Reduzir estímulos visuais ajuda ?",
-        content: ["Sim. Ambientes com menos estímulos visuais e auditivos reduzem distrações e facilitam a atenção sustentada, especialmente durante tarefas que exigem concentração."],
+        content: [
+          "Sim. Ambientes com menos estímulos visuais e auditivos reduzem distrações e facilitam a atenção sustentada, especialmente durante tarefas que exigem concentração.",
+        ],
       },
       {
         heading: "Apps de organização ajudam ?",
-        content: ["Podem ajudar. Quando usados de forma orientada, aplicativos de agenda, lembretes e listas apoiam a organização e o planejamento, funcionando melhor quando integrados à rotina da criança."],
+        content: [
+          "Podem ajudar. Quando usados de forma orientada, aplicativos de agenda, lembretes e listas apoiam a organização e o planejamento, funcionando melhor quando integrados à rotina da criança.",
+        ],
       },
       {
         heading: "Timer visual ajuda ?",
-        content: ["Sim. Torna o tempo mais concreto, ajudando a iniciar, manter e finalizar tarefas, além de facilitar a transição entre atividades."],
+        content: [
+          "Sim. Torna o tempo mais concreto, ajudando a iniciar, manter e finalizar tarefas, além de facilitar a transição entre atividades.",
+        ],
       },
       {
         heading: "Todos devem seguir as mesmas regras ?",
-        content: ["Sim. A consistência entre cuidadores e contextos é fundamental para o aprendizado de comportamentos e para a eficácia das intervenções."],
+        content: [
+          "Sim. A consistência entre cuidadores e contextos é fundamental para o aprendizado de comportamentos e para a eficácia das intervenções.",
+        ],
+      },
+      {
+        heading: "Estratégias consistentes ajudam ?",
+        content: [
+          "Sim. A consistência na aplicação de regras, rotinas e reforços é um dos fatores mais importantes para o sucesso das intervenções comportamentais e para a redução dos sintomas e prejuízos funcionais .",
+        ],
       },
     ],
   },
@@ -818,8 +976,10 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "",
-        content: [""],
+        heading: "Informação ajuda ?",
+        content: [
+          "Sim. Quando os pais compreendem o funcionamento do TDAH, conseguem ajustar expectativas, կիրառar estratégias consistentes e aderir melhor ao tratamento, o que melhora o prognóstico .",
+        ],
       },
     ],
   },
@@ -976,29 +1136,442 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "",
-        content: [""],
+        heading:
+          "Criança com dificuldade em aprender precisa de acompanhamento ?",
+        content: [
+          "Sim. Quando a dificuldade é persistente, é importante avaliação profissional para identificar causas, como TDAH, transtornos de aprendizagem ou outros fatores, e orientar intervenções adequadas .",
+        ],
+      },
+      {
+        heading: "TDAH associado a dificuldades na fala",
+        content: [
+          "Pode estar associado, em alguns casos, a dificuldades na linguagem, especialmente na organização do discurso e compreensão de instruções mais complexas .",
+        ],
+      },
+      {
+        heading: "Pode haver dificuldade motora ?",
+        content: [
+          "Sim. Algumas crianças podem apresentar dificuldades de coordenação motora, o que pode impactar atividades escolares e do dia a dia.",
+        ],
+      },
+      {
+        heading: "Ansiedade como influenciadora direta da condição",
+        content: [
+          "A ansiedade pode intensificar sintomas como desatenção e inquietação, além de aumentar o impacto funcional, exigindo manejo conjunto .",
+        ],
+      },
+      {
+        heading: "Baixa motivação pode ser depressão ?",
+        content: [
+          "Pode. Desmotivação persistente, especialmente quando acompanhada de tristeza, irritabilidade, alterações de sono ou perda de interesse, pode indicar depressão ou outra condição associada. É importante avaliação profissional para diferenciar causas e orientar o manejo .",
+        ],
+      },
+      {
+        heading: "Dislexia pode coexistir ?",
+        content: [
+          "Sim. Transtornos de aprendizagem, como a dislexia, frequentemente coexistem com TDAH e podem potencializar as dificuldades acadêmicas, exigindo avaliação e intervenção específicas.",
+        ],
+      },
+      {
+        heading: "Insônia é frequente ?",
+        content: [
+          "Sim. Dificuldades de sono são comuns, podendo estar relacionadas ao próprio TDAH, à rotina irregular ou ao uso de medicação. A higiene do sono é uma parte importante do manejo .",
+        ],
+      },
+      {
+        heading: "Oposição é comum ?",
+        content: [
+          "Pode ocorrer. Comportamentos opositores podem coexistir, especialmente quando há frustração frequente ou dificuldades de autorregulação, sendo importante avaliar o contexto e a intensidade.",
+        ],
+      },
+      {
+        heading: "Impulsividade Extrema no TDAH .",
+        content: [
+          "Mudanças repentinas no rendimento escolar ou comportamento devem ser investigadas, pois podem indicar agravamento dos sintomas ou presença de outras condições associadas.",
+        ],
+      },
+      {
+        heading:
+          "Crises emocionais frequentes em crianças com TDAH são normais ?",
+        content: [
+          "Não. Crises intensas, frequentes ou que impactam a rotina indicam dificuldade de regulação emocional e precisam de avaliação e intervenção adequadas .",
+        ],
+      },
+      {
+        heading: "Dificuldade em seguir regras de segurança ?",
+        content: [
+          "Sim. A impulsividade e a busca por respostas imediatas podem dificultar o cumprimento de regras de segurança, aumentando o risco em algumas situações .",
+        ],
+      },
+      {
+        heading: "Problemas de aprendizagem na criança",
+        content: [
+          "Transtornos de aprendizagem ocorrem com maior frequência em crianças com TDAH do que na população geral e podem ampliar o impacto no desempenho escolar, exigindo avaliação e intervenções específicas .",
+        ],
+      },
+      {
+        heading: "Pode causar depressão ?",
+        content: [
+          "Pode estar associado. A depressão é uma comorbidade possível, muitas vezes relacionada às dificuldades persistentes e frustrações no dia a dia .",
+        ],
+      },
+      {
+        heading: "Validar sentimentos ajuda ?",
+        content: [
+          "Sim. Reconhecer e nomear as emoções da criança favorece a regulação emocional, reduz a intensidade das reações e ensina formas mais adaptativas de lidar com frustrações .",
+        ],
+      },
+      {
+        heading: "Pode causar explosões emocionais ?",
+        content: [
+          "Sim. Dificuldades de regulação emocional são frequentes e podem levar a reações intensas e desproporcionais, especialmente diante de frustração. Essas manifestações respondem bem a intervenções comportamentais e treinamento de habilidades emocionais .",
+        ],
+      },
+      {
+        heading: "Pais ficam sobrecarregados ?",
+        content: [
+          "Sim. O manejo diário pode gerar estresse parental elevado. Programas de treinamento de pais e apoio profissional demonstram melhorar tanto o comportamento da criança quanto o bem-estar da família .",
+        ],
+      },
+      {
+        heading: "Esquecimento das tarefas diárias",
+        content: [
+          "Déficits de atenção e memória de trabalho contribuem para esquecimentos frequentes de atividades, compromissos e responsabilidades .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "Isolamento social é comum ?",
+        content: [
+          "Pode ocorrer, especialmente quando há dificuldades nas interações sociais ou experiências repetidas de frustração. Quando persistente, merece atenção .",
+        ],
+      },
+      {
+        heading: "A criança com TDAH parece não escutar quando falam com ela ?",
+        content: [
+          "Sim. Muitas crianças aparentam não ouvir porque se distraem facilmente ou têm dificuldade em manter atenção sustentada durante conversas e instruções.",
+        ],
+      },
+      {
+        heading: "Esquecer materiais escolares pode ser sinal de desatenção ?",
+        content: [
+          "Sim. Esquecer objetos, perder materiais e deixar itens importantes para trás são manifestações frequentes relacionadas a dificuldades de atenção e organização.",
+        ],
+      },
+      {
+        heading: "A criança começa tarefas e não termina ?",
+        content: [
+          "Sim. Dificuldades de manter foco, organizar etapas e sustentar esforço mental podem dificultar a conclusão de atividades.",
+        ],
+      },
+      {
+        heading: "Erros por descuido no TDAH",
+        content: [
+          "Sim. Falhas por desatenção aos detalhes e erros evitáveis são frequentes, principalmente em tarefas longas ou repetitivas .",
+        ],
+      },
+      {
+        heading: "Dificuldade para seguir várias etapas é comum ?",
+        content: [
+          "Sim. Instruções longas, complexas ou com muitas etapas podem ser difíceis de acompanhar e executar sem apoio adicional .",
+        ],
+      },
+      {
+        heading: "Parece “no mundo da lua” às vezes ?",
+        content: [
+          "Sim. Algumas crianças apresentam dispersão mental frequente, parecendo distraídas ou desconectadas do que acontece ao redor.",
+        ],
+      },
+      {
+        heading: "Demora mais que o esperado para tarefas simples ?",
+        content: [
+          "Sim. Dificuldades de atenção, organização e gerenciamento do tempo podem tornar tarefas simples mais lentas e inconsistentes.",
+        ],
+      },
+      {
+        heading: "Precisa de lembretes frequentes ?",
+        content: [
+          "Sim. Crianças com TDAH frequentemente precisam de repetição, lembretes e supervisão para lembrar tarefas, seguir instruções e concluir atividades.",
+        ],
+      },
+      {
+        heading: "Dificuldade para organizar mochila e materiais é comum ?",
+        content: [
+          "Sim. Dificuldades de organização são frequentes e podem levar a perda de materiais, esquecimentos e dificuldade em planejar tarefas escolares.",
+        ],
+      },
+      {
+        heading: "A criança com TDAH corre ou sobe em lugares inadequados ?",
+        content: [
+          "Sim. Em algumas idades, hiperatividade pode se manifestar como correr, subir em móveis ou movimentar-se excessivamente em situações em que isso não é esperado .",
+        ],
+      },
+      {
+        heading: "Movimentos abruptos e repetitivos",
+        content: [
+          "Inquietação motora, como mexer mãos, pés ou se remexer constantemente, é uma manifestação comum de hiperatividade.",
+        ],
+      },
+      {
+        heading: "A impulsividade melhora com apoio e tratamento ?",
+        content: [
+          "Sim. Intervenções comportamentais, orientação parental, suporte escolar e, quando indicado, tratamento medicamentoso podem reduzir impulsividade e melhorar o autocontrole .",
+        ],
+      },
+      {
+        heading: "Crianças com TDAH podem resistir para dormir ?",
+        content: [
+          "Sim. Dificuldades para desacelerar, interromper atividades estimulantes e seguir a rotina noturna são frequentes em algumas crianças com TDAH .",
+        ],
+      },
+      {
+        heading: "Dormir pouco piora o comportamento ?",
+        content: [
+          "Sim. Privação ou má qualidade do sono podem intensificar desatenção, irritabilidade, impulsividade e dificuldades emocionais.",
+        ],
+      },
+      {
+        heading: "Sonolência durante o dia pode acontecer ?",
+        content: [
+          "Sim. Sono insuficiente ou fragmentado pode causar cansaço, dificuldade de concentração e sonolência diurna .",
+        ],
       },
       {
         heading: "",
         content: [""],
       },
+    ],
+  },
+  psychologicalContext: {
+    title: "Contexto Psicológico",
+    subtitle: "Entenda mais sobre o contexto psicológico que envolve o TDAH",
+    image: "",
+    sections: [
       {
-        heading: "",
-        content: [""],
+        heading: "Por que crianças com TDAH esquecem tarefas com facilidade ?",
+        content: ["O TDAH frequentemente envolve dificuldades de memória de trabalho, responsável por manter e manipular informações por curto período, o que pode levar a esquecimentos frequentes ."],
       },
       {
-        heading: "",
-        content: [""],
+        heading: "Distrações na Criança",
+        content: ["O TDAH pode dificultar o filtro de estímulos e a manutenção da atenção sustentada, fazendo com que sons, pensamentos ou acontecimentos ao redor desviem facilmente o foco ."],
       },
       {
-        heading: "",
-        content: [""],
+        heading: "Por que ele sabe o que fazer, mas não faz ?",
+        content: ["Muitas crianças apresentam dificuldades nas funções executivas, como iniciar tarefas, planejar ações, manter esforço mental e organizar etapas, mesmo entendendo o que precisa ser feito."],
       },
       {
-        heading: "",
-        content: [""],
+        heading: "Por que tarefas longas parecem impossíveis ?",
+        content: ["Atividades prolongadas exigem atenção sustentada, persistência e autorregulação, funções frequentemente afetadas no TDAH ."],
       },
+      {
+        heading: "Por que mudanças de plano desorganizam tanto ?",
+        content: ["Dificuldades de flexibilidade cognitiva podem tornar mais difícil adaptar-se rapidamente a mudanças de rotina, regras ou expectativas."],
+      },
+      {
+        heading: "Repetição de Erros",
+        content: ["Pode haver dificuldade de automonitoramento e de usar feedback imediato para ajustar o comportamento e evitar repetir erros."],
+      },
+      {
+        heading: "Pressa, inimiga do Raciocínio da Criança",
+        content: ["A impulsividade cognitiva pode levar a respostas rápidas antes da análise completa da situação, aumentando erros e decisões precipitadas."],
+      },
+      {
+        heading: "Por que precisa de supervisão constante ?",
+        content: ["Déficits nas funções executivas podem dificultar planejamento, organização e manutenção de metas, fazendo com que supervisão e apoio externo sejam necessários com maior frequência."],
+      },
+      {
+        heading: "Por que esquece instruções de poucos passos ?",
+        content: ["Crianças com TDAH podem apresentar dificuldades de memória de trabalho, que é a capacidade de manter informações ativas por curto período enquanto executam uma ação. Por isso, mesmo instruções simples com dois ou três passos podem ser esquecidas, especialmente em ambientes com distrações ou quando a criança está cansada, ansiosa ou pouco engajada."],
+      },
+      {
+        heading: "Por que parece não aprender com rotina repetida ?",
+        content: ["A aprendizagem pode acontecer, mas crianças com TDAH podem apresentar grande variabilidade na atenção, memória de trabalho e autorregulação. Por isso, mesmo após repetir uma rotina várias vezes, podem ter dificuldade em aplicar o que já sabem de forma consistente, especialmente em situações com distrações, cansaço, ansiedade ou baixa motivação."],
+      },
+      {
+        heading: "Dificuldade para planejar tarefas é comum ?",
+        content: ["Sim. Planejamento e organização fazem parte das funções executivas, frequentemente afetadas no TDAH, podendo dificultar a divisão de etapas, o gerenciamento do tempo e a conclusão de atividades."],
+      },
+      {
+        heading: "Perder o foco no meio da atividade pode acontecer ?",
+        content: ["Sim. Muitas crianças conseguem iniciar tarefas, mas têm dificuldade em manter atenção contínua, especialmente em atividades longas, repetitivas ou pouco estimulantes ."],
+      },
+      {
+        heading: "Esquecer o que ia fazer é frequente ?",
+        content: ["Sim. Alterações na memória de trabalho podem dificultar manter informações ativas por curto período, levando a esquecimentos frequentes."],
+      },
+      {
+        heading: "Demorar para começar tarefas é sintoma possível ?",
+        content: ["Sim. Algumas crianças apresentam dificuldade para iniciar atividades, especialmente quando exigem esforço mental prolongado, organização ou múltiplas etapas."],
+      },
+      {
+        heading: "Trocar de tarefa sem terminar a anterior é comum ?",
+        content: ["Sim. Distração, impulsividade e dificuldade em sustentar atenção podem levar a mudanças frequentes de atividade antes da conclusão ."],
+      },
+      {
+        heading: "Dificuldade para priorizar tarefas acontece ?",
+        content: ["Sim. Definir o que é mais importante, urgente ou deve ser feito primeiro pode ser desafiador devido às dificuldades executivas."],
+      },
+      {
+        heading: "Responder sem pensar é um sintoma cognitivo ?",
+        content: ["Sim. A impulsividade cognitiva pode levar a respostas rápidas, antes da análise completa da situação ou das consequências."],
+      },
+      {
+        heading: "Precisar de lembretes para tudo é comum ?",
+        content: ["Sim. Estratégias externas, como lembretes, listas, alarmes e supervisão, costumam ajudar bastante no funcionamento diário."],
+      },
+      {
+        heading: "Confundir etapas de uma tarefa pode acontecer ?",
+        content: ["Sim. Dificuldades de sequenciamento e organização mental podem prejudicar a execução correta de tarefas com várias etapas."],
+      },
+      {
+        heading: "Dificuldade na revisão dos erros",
+        content: ["O automonitoramento pode estar reduzido, fazendo com que a criança perceba menos os próprios erros ou revise tarefas de forma incompleta."],
+      },
+      {
+        heading: "Ansiedade pode piorar dificuldades cognitivas ?",
+        content: ["Sim. Ansiedade pode reduzir concentração, memória de trabalho e capacidade de organização, intensificando dificuldades já existentes."],
+      },
+      {
+        heading: "Baixa autoestima interfere no aprendizado ?",
+        content: ["Sim. Experiências repetidas de dificuldade, críticas ou fracassos podem reduzir motivação, confiança e persistência nas tarefas ."],
+      },
+      {
+        heading: "Transtorno de aprendizagem pode coexistir ?",
+        content: ["Sim. Dificuldades específicas de leitura, escrita ou matemática ocorrem com maior frequência em crianças com TDAH."],
+      },
+      {
+        heading: "Estresse familiar pode afetar atenção ?",
+        content: ["Sim. Ambientes com alto nível de estresse, conflitos ou desorganização podem agravar sintomas cognitivos e emocionais."],
+      },
+      {
+        heading: "Excesso de telas pode impactar funções cognitivas ?",
+        content: ["Pode. Uso excessivo de telas pode prejudicar sono, rotina, atenção sustentada e autorregulação, especialmente quando associado à redução de atividades físicas e tempo de descanso adequado."],
+      },
+      {
+        heading: "Frustração frequente prejudica desempenho mental ?",
+        content: ["Sim. Reações emocionais intensas podem interromper atenção, memória de trabalho e raciocínio, dificultando o desempenho em tarefas escolares e do dia a dia ."],
+      },
+      {
+        heading: "Tiques ou inquietação podem atrapalhar concentração ?",
+        content: ["Sim. Tiques motores, inquietação constante ou desconforto interno podem competir com a atenção e dificultar a manutenção do foco."],
+      },
+      {
+        heading: "Tratar condições associadas melhora cognição ?",
+        content: ["Sim. O manejo adequado de ansiedade, problemas de sono, dificuldades emocionais ou transtornos associados costuma melhorar atenção, organização e funcionamento global."],
+      },
+      {
+        heading: "Por que crianças com TDAH se frustram tão rápido ?",
+        content: ["Dificuldades de autorregulação, impulsividade e experiências repetidas de erro ou crítica podem reduzir a tolerância à frustração e intensificar reações emocionais."],
+      },
+      {
+        heading: "Por que pequenas correções causam choro intenso ?",
+        content: ["Algumas crianças apresentam maior sensibilidade emocional e podem interpretar correções simples como falha pessoal ou rejeição, reagindo de forma intensa."],
+      },
+      {
+        heading: "Por que meu filho reage exageradamente a contratempos ?",
+        content: ["O TDAH pode envolver dificuldade de regulação emocional e controle inibitório, tornando mais difícil lidar calmamente com frustrações e mudanças inesperadas."],
+      },
+      {
+        heading: "Por que críticas parecem afetá-lo tanto ?",
+        content: ["Experiências repetidas de cobrança, críticas ou sensação de fracasso podem impactar autoestima e aumentar a sensibilidade emocional."],
+      },
+      {
+        heading: "Por que mudanças inesperadas geram irritação ?",
+        content: ["Mudanças repentinas podem causar desorganização mental, dificuldade de adaptação e sensação de perda de controle, aumentando irritação e estresse."],
+      },
+      {
+        heading: "Por que perder jogos ou disputas gera explosões ?",
+        content: ["Competição, espera e frustração podem ser mais difíceis de manejar devido à impulsividade, baixa tolerância à frustração e dificuldade de regulação emocional."],
+      },
+      {
+        heading: "Por que ele passa do riso ao choro rapidamente ?",
+        content: ["Oscilações emocionais rápidas podem ocorrer devido à dificuldade em modular emoções e recuperar o equilíbrio após estímulos emocionais."],
+      },
+      {
+        heading: "Por que esperar aumenta irritação ?",
+        content: ["Esperar exige controle inibitório, paciência e tolerância à demora, habilidades frequentemente mais desafiadoras em crianças com TDAH."],
+      },
+      {
+        heading: "Por que conflitos entre irmãos pioram reações emocionais ?",
+        content: ["Situações competitivas, provocações e disputas podem intensificar impulsividade e reatividade emocional."],
+      },
+      {
+        heading: "Por que parece levar tudo para o lado pessoal ?",
+        content: ["Baixa autoestima, experiências repetidas de crítica e maior sensibilidade emocional podem fazer a criança interpretar comentários de forma mais intensa."],
+      },
+      {
+        heading: "Mudanças rápidas de humor podem acontecer ?",
+        content: ["Sim. Algumas crianças apresentam maior instabilidade emocional, com oscilações de humor ao longo do dia, especialmente diante de frustração ou sobrecarga."],
+      },
+      {
+        heading: "Irritabilidade frequente é comum ?",
+        content: ["Sim. Irritabilidade pode ocorrer diante de dificuldades diárias, excesso de demandas, cansaço, frustração ou condições associadas, como ansiedade e problemas de sono."],
+      },
+      {
+        heading: "Chorar facilmente pode estar relacionado ?",
+        content: ["Sim. Algumas crianças demonstram emoções de maneira mais intensa e têm maior dificuldade em regular tristeza, frustração ou sensação de incapacidade."],
+      },
+      {
+        heading: "Explosões emocionais rápidas podem ocorrer ?",
+        content: ["Sim. Impulsividade e dificuldades de autorregulação podem favorecer reações emocionais intensas, repentinas e desproporcionais ao contexto."],
+      },
+      {
+        heading: "Dificuldade para se acalmar sozinho é comum ?",
+        content: ["Sim. Muitas crianças precisam de apoio externo para recuperar o controle emocional, especialmente em momentos de frustração ou conflito."],
+      },
+      {
+        heading: "Ficar muito sensível a críticas pode acontecer ?",
+        content: ["Sim. Comentários negativos podem ser percebidos com grande intensidade, especialmente em crianças que já acumulam experiências frequentes de erro ou correção."],
+      },
+      {
+        heading: "Desânimo após erros é frequente ?",
+        content: ["Sim. Frustrações repetidas podem reduzir motivação, autoconfiança e persistência, levando a sentimentos de incapacidade ou desistência mais rápida."],
+      }, 
+      {
+        heading: "Reagir com raiva a pequenas coisas é possível ?",
+        content: ["Sim. Crianças com TDAH podem apresentar baixa tolerância à frustração e dificuldade de regulação emocional, reagindo de forma intensa a contratempos aparentemente pequenos."],
+      },
+      {
+        heading: "Apego excessivo aos pais pode aparecer ?",
+        content: ["Pode ocorrer, especialmente quando há ansiedade, insegurança emocional ou medo de falhar associado ao TDAH."],
+      },
+      {
+        heading: "Vergonha após comportamentos impulsivos pode acontecer ?",
+        content: ["Sim. Muitas crianças percebem as consequências de atitudes impulsivas depois que acontecem e podem sentir culpa, vergonha ou arrependimento."],
+      },
+      {
+        heading: "Ansiedade pode aumentar reações emocionais ?",
+        content: ["Sim. Ansiedade pode intensificar irritabilidade, sensibilidade emocional, preocupações excessivas e dificuldade de autocontrole."],
+      }, 
     ],
   },
 };
