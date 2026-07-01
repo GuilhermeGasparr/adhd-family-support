@@ -1,4 +1,13 @@
-import { View, Text, Image, Pressable, StyleSheet, ImageSourcePropType } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  ImageSourcePropType,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 type ToolbarProps = {
   title: string;
@@ -21,18 +30,16 @@ export default function Toolbar({
 
       <View style={styles.headerLeft}>
         <Text style={styles.title}>{title}</Text>
-        {subtitle && (
-          <Text style={styles.subtitle}>{subtitle}</Text>
-        )}
+        {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
       </View>
 
       <Pressable
-        onPress={onMenuPress}
+        onPress={() => router.push("./chatbot")}
         style={({ pressed }) => ({
           opacity: pressed ? 0.6 : 1,
         })}
       >
-        <Text style={{ color: "white", fontSize: 38, fontWeight: "500" }}>≡</Text>
+        <Ionicons name="chatbubble-ellipses-outline" size={30} color="white" />
       </Pressable>
     </View>
   );

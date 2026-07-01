@@ -2,11 +2,18 @@ import InfoCard from "@/components/InfoCard";
 import "@/i18n";
 import { useTranslation } from "react-i18next";
 import { useRef, useCallback } from "react";
-import { Animated, Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Animated,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router, useFocusEffect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-
+import { Pressable } from "react-native";
 // ─── Animated InfoCard wrapper ───────────────────────────────────────────────
 
 function AnimatedCard({
@@ -84,32 +91,101 @@ export default function Index() {
     Animated.stagger(80, [
       // Header
       Animated.parallel([
-        Animated.timing(headerOpacity, { toValue: 1, duration: 380, useNativeDriver: true }),
-        Animated.spring(headerTranslateY, { toValue: 0, friction: 8, tension: 70, useNativeDriver: true }),
+        Animated.timing(headerOpacity, {
+          toValue: 1,
+          duration: 380,
+          useNativeDriver: true,
+        }),
+        Animated.spring(headerTranslateY, {
+          toValue: 0,
+          friction: 8,
+          tension: 70,
+          useNativeDriver: true,
+        }),
       ]),
       // Welcome card
       Animated.parallel([
-        Animated.timing(welcomeOpacity, { toValue: 1, duration: 400, useNativeDriver: true }),
-        Animated.spring(welcomeTranslateY, { toValue: 0, friction: 8, tension: 60, useNativeDriver: true }),
-        Animated.spring(welcomeScale, { toValue: 1, friction: 8, tension: 60, useNativeDriver: true }),
+        Animated.timing(welcomeOpacity, {
+          toValue: 1,
+          duration: 400,
+          useNativeDriver: true,
+        }),
+        Animated.spring(welcomeTranslateY, {
+          toValue: 0,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
+        Animated.spring(welcomeScale, {
+          toValue: 1,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
       ]),
       // Section label
-      Animated.timing(sectionOpacity, { toValue: 1, duration: 300, useNativeDriver: true }),
+      Animated.timing(sectionOpacity, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
       // Cards staggered
       Animated.parallel([
-        Animated.timing(card1Opacity, { toValue: 1, duration: 380, useNativeDriver: true }),
-        Animated.spring(card1TranslateY, { toValue: 0, friction: 8, tension: 60, useNativeDriver: true }),
-        Animated.spring(card1Scale, { toValue: 1, friction: 8, tension: 60, useNativeDriver: true }),
+        Animated.timing(card1Opacity, {
+          toValue: 1,
+          duration: 380,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card1TranslateY, {
+          toValue: 0,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card1Scale, {
+          toValue: 1,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
       ]),
       Animated.parallel([
-        Animated.timing(card2Opacity, { toValue: 1, duration: 380, useNativeDriver: true }),
-        Animated.spring(card2TranslateY, { toValue: 0, friction: 8, tension: 60, useNativeDriver: true }),
-        Animated.spring(card2Scale, { toValue: 1, friction: 8, tension: 60, useNativeDriver: true }),
+        Animated.timing(card2Opacity, {
+          toValue: 1,
+          duration: 380,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card2TranslateY, {
+          toValue: 0,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card2Scale, {
+          toValue: 1,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
       ]),
       Animated.parallel([
-        Animated.timing(card3Opacity, { toValue: 1, duration: 380, useNativeDriver: true }),
-        Animated.spring(card3TranslateY, { toValue: 0, friction: 8, tension: 60, useNativeDriver: true }),
-        Animated.spring(card3Scale, { toValue: 1, friction: 8, tension: 60, useNativeDriver: true }),
+        Animated.timing(card3Opacity, {
+          toValue: 1,
+          duration: 380,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card3TranslateY, {
+          toValue: 0,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
+        Animated.spring(card3Scale, {
+          toValue: 1,
+          friction: 8,
+          tension: 60,
+          useNativeDriver: true,
+        }),
       ]),
     ]).start();
   }, []);
@@ -118,7 +194,7 @@ export default function Index() {
   useFocusEffect(
     useCallback(() => {
       playAnimations();
-    }, [playAnimations])
+    }, [playAnimations]),
   );
 
   return (
@@ -131,12 +207,25 @@ export default function Index() {
         <Animated.View
           style={[
             styles.header,
-            { opacity: headerOpacity, transform: [{ translateY: headerTranslateY }] },
+            {
+              opacity: headerOpacity,
+              transform: [{ translateY: headerTranslateY }],
+            },
           ]}
         >
-          <Text style={styles.headerEyebrow}>Bem-vindo</Text>
-          <Text style={styles.headerTitle}>{t("Header.title")}</Text>
-          <Text style={styles.headerSubtitle}>{t("Header.subtitle")}</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.headerEyebrow}>Bem-vindo</Text>
+            <Text style={styles.headerTitle}>{t("Header.title")}</Text>
+            <Text style={styles.headerSubtitle}>{t("Header.subtitle")}</Text>
+          </View>
+
+          <Pressable onPress={() => router.push("/chatbot")}>
+            <Ionicons
+              name="chatbubble-ellipses-outline"
+              size={30}
+              color="#4A7DDE"
+            />
+          </Pressable>
         </Animated.View>
 
         <View style={styles.container}>
@@ -146,7 +235,10 @@ export default function Index() {
               styles.welcomeCard,
               {
                 opacity: welcomeOpacity,
-                transform: [{ translateY: welcomeTranslateY }, { scale: welcomeScale }],
+                transform: [
+                  { translateY: welcomeTranslateY },
+                  { scale: welcomeScale },
+                ],
               },
             ]}
           >
@@ -159,13 +251,20 @@ export default function Index() {
                 />
               </View>
               <View style={styles.welcomeTextWrap}>
-                <Text style={styles.welcomeTitle}>{t("Welcome.title_welcome")}</Text>
+                <Text style={styles.welcomeTitle}>
+                  {t("Welcome.title_welcome")}
+                </Text>
               </View>
             </View>
 
             {/* Info banner */}
             <View style={styles.infoBanner}>
-              <Ionicons name="information-circle-outline" size={20} color="#4A7DDE" style={{ marginRight: 10, flexShrink: 0 }} />
+              <Ionicons
+                name="information-circle-outline"
+                size={20}
+                color="#4A7DDE"
+                style={{ marginRight: 10, flexShrink: 0 }}
+              />
               <Text style={styles.infoText}>{t("Welcome.text_info")}</Text>
             </View>
           </Animated.View>
@@ -191,7 +290,10 @@ export default function Index() {
               colorBg="#E0F5FA"
               colorIcon="#0BBEBB"
               onPress={() =>
-                router.push({ pathname: "/details/[contentId]", params: { contentId: "whatIs" } })
+                router.push({
+                  pathname: "/details/[contentId]",
+                  params: { contentId: "whatIs" },
+                })
               }
               icon="book-outline"
             />
@@ -209,7 +311,10 @@ export default function Index() {
               colorBg="#F3E2F1"
               colorIcon="#A51091"
               onPress={() =>
-                router.push({ pathname: "/details/[contentId]", params: { contentId: "conditionDiagnosis" } })
+                router.push({
+                  pathname: "/details/[contentId]",
+                  params: { contentId: "conditionDiagnosis" },
+                })
               }
               icon="heart-outline"
             />
@@ -227,7 +332,10 @@ export default function Index() {
               colorBg="#FEF0DC"
               colorIcon="#B17617"
               onPress={() =>
-                router.push({ pathname: "/details/[contentId]", params: { contentId: "estrategies" } })
+                router.push({
+                  pathname: "/details/[contentId]",
+                  params: { contentId: "estrategies" },
+                })
               }
               icon="bandage-outline"
             />
@@ -251,10 +359,12 @@ const styles = StyleSheet.create({
 
   // Header
   header: {
-    paddingHorizontal: 22,
-    paddingTop: 20,
-    paddingBottom: 4,
-  },
+  paddingHorizontal: 22,
+  paddingTop: 20,
+  paddingBottom: 4,
+  flexDirection: "row",
+  alignItems: "center",
+},
   headerEyebrow: {
     fontSize: 12,
     fontWeight: "600",
