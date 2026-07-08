@@ -1,7 +1,7 @@
 import InfoCard from "@/components/InfoCard";
 import "@/i18n";
 import { useTranslation } from "react-i18next";
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState } from "react";
 import {
   Animated,
   Image,
@@ -9,11 +9,13 @@ import {
   StyleSheet,
   Text,
   View,
+  Easing,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router, useFocusEffect } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
+
 // ─── Animated InfoCard wrapper ───────────────────────────────────────────────
 
 function AnimatedCard({
@@ -39,6 +41,134 @@ function AnimatedCard({
     >
       {children}
     </Animated.View>
+  );
+}
+
+// ─── Floating Chat Button ────────────────────────────────────────────────────
+
+function ChatFab() {
+  const [showLabel, setShowLabel] = useState(true);
+
+  const fabScale = useRef(new Animated.Value(0)).current;
+  const pressScale = useRef(new Animated.Value(1)).current;
+  const haloScale = useRef(new Animated.Value(1)).current;
+  const haloOpacity = useRef(new Animated.Value(0.5)).current;
+  const labelOpacity = useRef(new Animated.Value(0)).current;
+
+  useFocusEffect(
+    useCallback(() => {
+      // Entrance
+      Animated.sequence([
+        Animated.delay(500),
+        Animated.spring(fabScale, {
+          toValue: 1,
+          friction: 6,
+          tension: 80,
+          useNativeDriver: true,
+        }),
+      ]).start();
+
+      // Breathing halo, loops forever
+      const halo = Animated.loop(
+        Animated.sequence([
+          Animated.parallel([
+            Animated.timing(haloScale, {
+              toValue: 1.55,
+              duration: 1400,
+              easing: Easing.out(Easing.ease),
+              useNativeDriver: true,
+            }),
+            Animated.timing(haloOpacity, {
+              toValue: 0,
+              duration: 1400,
+              easing: Easing.out(Easing.ease),
+              useNativeDriver: true,
+            }),
+          ]),
+          Animated.timing(haloScale, {
+            toValue: 1,
+            duration: 0,
+            useNativeDriver: true,
+          }),
+          Animated.timing(haloOpacity, {
+            toValue: 0.5,
+            duration: 0,
+            useNativeDriver: true,
+          }),
+          Animated.delay(900),
+        ])
+      );
+      halo.start();
+
+      // Friendly label, shows briefly then fades
+      Animated.sequence([
+        Animated.delay(900),
+        Animated.timing(labelOpacity, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.delay(2800),
+        Animated.timing(labelOpacity, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+      ]).start(() => setShowLabel(false));
+
+      return () => halo.stop();
+    }, [])
+  );
+
+  function handlePress() {
+    Animated.sequence([
+      Animated.timing(pressScale, {
+        toValue: 0.88,
+        duration: 90,
+        useNativeDriver: true,
+      }),
+      Animated.spring(pressScale, {
+        toValue: 1,
+        friction: 4,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    router.push("/chatbot");
+  }
+
+  return (
+    <View style={styles.fabWrapper} pointerEvents="box-none">
+      {showLabel && (
+        <Animated.View style={[styles.fabLabel, { opacity: labelOpacity }]}>
+          <Text style={styles.fabLabelText}>Precisa de ajuda? 💬</Text>
+        </Animated.View>
+      )}
+
+      <Animated.View style={{ transform: [{ scale: fabScale }] }}>
+        <Animated.View
+          style={[
+            styles.fabHalo,
+            {
+              opacity: haloOpacity,
+              transform: [{ scale: haloScale }],
+            },
+          ]}
+        />
+
+        <Animated.View style={{ transform: [{ scale: pressScale }] }}>
+          <Pressable
+            onPress={handlePress}
+            style={styles.fab}
+            hitSlop={10}
+            accessibilityRole="button"
+            accessibilityLabel="Abrir assistente virtual"
+          >
+            <Ionicons name="chatbubble-ellipses" size={26} color="#FFF" />
+          </Pressable>
+        </Animated.View>
+      </Animated.View>
+    </View>
   );
 }
 
@@ -218,14 +348,6 @@ export default function Index() {
             <Text style={styles.headerTitle}>{t("Header.title")}</Text>
             <Text style={styles.headerSubtitle}>{t("Header.subtitle")}</Text>
           </View>
-
-          <Pressable onPress={() => router.push("/chatbot")}>
-            <Ionicons
-              name="chatbubble-ellipses-outline"
-              size={30}
-              color="#4A7DDE"
-            />
-          </Pressable>
         </Animated.View>
 
         <View style={styles.container}>
@@ -342,6 +464,8 @@ export default function Index() {
           </AnimatedCard>
         </View>
       </ScrollView>
+
+      <ChatFab />
     </SafeAreaView>
   );
 }
@@ -357,18 +481,17 @@ const styles = StyleSheet.create({
     paddingBottom: 48,
   },
 
-  // Header
   header: {
-  paddingHorizontal: 22,
-  paddingTop: 20,
-  paddingBottom: 4,
-  flexDirection: "row",
-  alignItems: "center",
-},
+    paddingHorizontal: 22,
+    paddingTop: 20,
+    paddingBottom: 4,
+    flexDirection: "row",
+    alignItems: "center",
+  },
   headerEyebrow: {
     fontSize: 12,
-    fontWeight: "600",
-    color: "#4A7DDE",
+    fontWeight: "700",
+    color: "#3D6FD1",
     letterSpacing: 1.2,
     textTransform: "uppercase",
     marginBottom: 6,
@@ -376,13 +499,13 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 32,
     fontWeight: "800",
-    color: "#0F172A",
+    color: "#111527",
     letterSpacing: -0.8,
     marginBottom: 6,
   },
   headerSubtitle: {
     fontSize: 14,
-    color: "#7A869A",
+    color: "#565F76",
     lineHeight: 21,
   },
 
@@ -391,17 +514,18 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 
-  // Welcome Card
   welcomeCard: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#ffffffbc",
     borderRadius: 24,
     padding: 20,
     marginBottom: 28,
-    shadowColor: "#A0B4D0",
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.13,
-    shadowRadius: 18,
-    elevation: 6,
+    borderWidth: 1,
+    borderColor: "#f9fafd",
+    shadowColor: "#a4a8b0",
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    elevation: 5,
   },
   welcomeTop: {
     flexDirection: "row",
@@ -412,7 +536,7 @@ const styles = StyleSheet.create({
     width: 52,
     height: 52,
     borderRadius: 16,
-    backgroundColor: "#EEF4FF",
+    backgroundColor: "#E3EBFF",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 14,
@@ -428,35 +552,33 @@ const styles = StyleSheet.create({
   welcomeTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#0F172A",
+    color: "#111527",
     letterSpacing: -0.3,
     lineHeight: 28,
   },
 
-  // Info banner inside welcome card
   infoBanner: {
     flexDirection: "row",
     alignItems: "flex-start",
-    backgroundColor: "#EEF4FF",
+    backgroundColor: "#E3EBFF",
     borderRadius: 14,
     padding: 14,
   },
   infoText: {
     flex: 1,
     fontSize: 13,
-    color: "#3D4A63",
+    color: "#374162",
     lineHeight: 20,
     fontWeight: "400",
   },
 
-  // Section
   sectionRow: {
     marginBottom: 18,
   },
   sectionEyebrow: {
     fontSize: 12,
-    fontWeight: "600",
-    color: "#9AA3B8",
+    fontWeight: "700",
+    color: "#cecece",
     letterSpacing: 1,
     textTransform: "uppercase",
     marginBottom: 4,
@@ -464,7 +586,51 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#0F172A",
+    color: "#111527",
     letterSpacing: -0.3,
+  },
+
+  fabWrapper: {
+    position: "absolute",
+    right: 20,
+    bottom: 28,
+    alignItems: "flex-end",
+  },
+
+  fab: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#089D9A",
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#089D9A",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.4,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+
+  fabHalo: {
+    position: "absolute",
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#089D9A",
+  },
+
+  fabLabel: {
+    backgroundColor: "#1A2036",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 14,
+    marginBottom: 10,
+    maxWidth: 190,
+  },
+
+  fabLabelText: {
+    color: "#FFF",
+    fontSize: 13,
+    fontWeight: "600",
   },
 });
