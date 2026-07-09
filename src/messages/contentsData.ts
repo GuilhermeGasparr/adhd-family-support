@@ -105,30 +105,6 @@ export const contentsData: Record<string, ContentItem> = {
           "Sim. Podem oscilar conforme o nível de cansaço, demandas cognitivas, ambiente e estrutura disponível.",
         ],
       },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
     ],
   },
   conditionDiagnosis: {
@@ -497,22 +473,6 @@ export const contentsData: Record<string, ContentItem> = {
         content: [
           "Sim. A comunicação com a escola permite alinhar estratégias, oferecer adaptações quando necessário e melhorar o suporte à criança .",
         ],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
-      },
-      {
-        heading: "",
-        content: [""],
       },
     ],
   },
