@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://adhd-chatbot-api-ylqu.onrender.com";
 
 export async function askChatbot(message: string): Promise<string> {
   const response = await fetch(`${API_URL}/chat`, {
@@ -10,12 +10,15 @@ export async function askChatbot(message: string): Promise<string> {
       message,
     }),
   });
-
+  const data = await response.json();
+  console.log("Status:", response.status);
+  console.log("Resposta:", data);
+  
   if (!response.ok) {
-    throw new Error("Erro ao comunicar com a IA");
+    throw new Error(JSON.stringify(data));
   }
 
-  const data = await response.json();
+  
 
   return data.answer;
 }
