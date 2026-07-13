@@ -7,7 +7,6 @@ import {
   Dimensions,
   Image,
   Pressable,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -15,12 +14,13 @@ import {
 } from "react-native";
 
 const { width } = Dimensions.get("window");
+const IMAGE_HEIGHT = 280;
 
 export default function DetailScreen() {
   const { contentId } = useLocalSearchParams<{ contentId: string }>();
   const data = contentsData[contentId];
 
-  // Animation refs
+  // Entrance animation refs
   const backBtnScale = useRef(new Animated.Value(1)).current;
   const backBtnOpacity = useRef(new Animated.Value(0)).current;
   const cardTranslateY = useRef(new Animated.Value(40)).current;
@@ -28,6 +28,9 @@ export default function DetailScreen() {
   const imageOpacity = useRef(new Animated.Value(0)).current;
   const titleTranslateY = useRef(new Animated.Value(20)).current;
   const titleOpacity = useRef(new Animated.Value(0)).current;
+
+  // Scroll-driven "rising card" animation
+  const scrollY = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     // Staggered entrance animations
@@ -114,24 +117,24 @@ export default function DetailScreen() {
     );
   }
 
+  // Image parallax: stretches slightly on pull-down, drifts up slower than
+  // scroll on the way up so the card visibly overtakes it as you read.
+  const imageTranslateY = scrollY.interpolate({
+    inputRange: [-IMAGE_HEIGHT, 0, IMAGE_HEIGHT],
+    outputRange: [-IMAGE_HEIGHT * 0.5, 0, IMAGE_HEIGHT * 0.5],
+    extrapolate: "clamp",
+  });
+  const imageScale = scrollY.interpolate({
+    inputRange: [-IMAGE_HEIGHT, 0],
+    outputRange: [2, 1],
+    extrapolate: "clamp",
+  });
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
-      {/* Hero Image */}
-      <Animated.View style={{ opacity: imageOpacity }}>
-        {data.image ? (
-          <Image source={{ uri: data.image }} style={styles.image} />
-        ) : (
-          <View style={styles.placeholder}>
-            <Text style={styles.placeholderEmoji}>📘</Text>
-          </View>
-        )}
-        {/* Gradient overlay at bottom of image */}
-        <View style={styles.imageOverlay} />
-      </Animated.View>
-
-      {/* Back Button */}
+      {/* Back Button — fixed above everything */}
       <Animated.View
         style={[
           styles.backButtonWrapper,
@@ -151,38 +154,67 @@ export default function DetailScreen() {
         </Pressable>
       </Animated.View>
 
-      {/* Content Card */}
-      <Animated.View
-        style={[
-          styles.card,
-          {
-            opacity: cardOpacity,
-            transform: [{ translateY: cardTranslateY }],
-          },
-        ]}
+      {/* Single scroll: image and card scroll together, so the card
+          naturally rises and covers the image as the reader scrolls down */}
+      <Animated.ScrollView
+        showsVerticalScrollIndicator={false}
+        scrollEventThrottle={16}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: true }
+        )}
+        contentContainerStyle={styles.scrollContent}
       >
+        {/* Hero Image */}
         <Animated.View
-          style={{
-            opacity: titleOpacity,
-            transform: [{ translateY: titleTranslateY }],
-          }}
+          style={[
+            styles.imageWrapper,
+            {
+              opacity: imageOpacity,
+              transform: [
+                { translateY: imageTranslateY },
+                { scale: imageScale },
+              ],
+            },
+          ]}
         >
-          {/* Pill tag */}
-          <View style={styles.pill}>
-            <Text style={styles.pillText}>Conteúdo</Text>
-          </View>
-
-          <Text style={styles.title}>{data.title}</Text>
-          <Text style={styles.subtitle}>{data.subtitle}</Text>
-
-          {/* Divider */}
-          <View style={styles.divider} />
+          {data.image ? (
+            <Image source={{ uri: data.image }} style={styles.image} />
+          ) : (
+            <View style={styles.placeholder}>
+              <Text style={styles.placeholderEmoji}>📘</Text>
+            </View>
+          )}
         </Animated.View>
 
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.scrollContent}
+        {/* Content Card — rises over the image as the ScrollView scrolls */}
+        <Animated.View
+          style={[
+            styles.card,
+            {
+              opacity: cardOpacity,
+              transform: [{ translateY: cardTranslateY }],
+            },
+          ]}
         >
+          <Animated.View
+            style={{
+              opacity: titleOpacity,
+              transform: [{ translateY: titleTranslateY }],
+            }}
+          >
+            {/* Pill tag */}
+            <View style={styles.pill}>
+              <Text style={styles.pillText}>Conteúdo</Text>
+            </View>
+
+            <Text style={styles.title}>{data.title}</Text>
+            <Text style={styles.subtitle}>{data.subtitle}</Text>
+
+            {/* Divider */}
+            <View style={styles.divider} />
+          </Animated.View>
+
           {data.sections?.map((section, index) => (
             <View key={index} style={styles.section}>
               <View style={styles.sectionHeadingRow}>
@@ -197,8 +229,8 @@ export default function DetailScreen() {
               ))}
             </View>
           ))}
-        </ScrollView>
-      </Animated.View>
+        </Animated.View>
+      </Animated.ScrollView>
     </View>
   );
 }
@@ -209,31 +241,29 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F6FB",
   },
 
+  scrollContent: {
+    paddingBottom: 48,
+  },
+
   // Hero
+  imageWrapper: {
+    height: IMAGE_HEIGHT,
+    width: "100%",
+    overflow: "hidden",
+  },
   image: {
     width: "100%",
-    height: 280,
+    height: "100%",
     resizeMode: "cover",
   },
   placeholder: {
-    height: 280,
+    height: "100%",
     backgroundColor: "#D9E8F7",
     justifyContent: "center",
     alignItems: "center",
   },
   placeholderEmoji: {
     fontSize: 72,
-  },
-  imageOverlay: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 80,
-    // Simulated gradient with semi-transparent bottom fade
-    backgroundColor: "rgba(244,246,251,0.0)",
-    // React Native doesn't support linear-gradient natively without expo-linear-gradient,
-    // so we use a subtle shadow trick via the card itself
   },
 
   // Back Button
@@ -259,7 +289,6 @@ const styles = StyleSheet.create({
 
   // Card
   card: {
-    flex: 1,
     backgroundColor: "#FFFFFF",
     marginHorizontal: 12,
     marginTop: -36,
@@ -312,11 +341,6 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: "#EEF1F7",
     marginBottom: 24,
-  },
-
-  // Scroll
-  scrollContent: {
-    paddingBottom: 48,
   },
 
   section: {

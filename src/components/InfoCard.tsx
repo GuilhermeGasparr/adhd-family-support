@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { useRef } from "react";
+import { View, Text, StyleSheet, Pressable, Animated } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 interface InfoCardProps {
@@ -18,33 +19,105 @@ export default function InfoCard({
   colorBg,
   onPress,
 }: InfoCardProps) {
+  const scale = useRef(new Animated.Value(1)).current;
+  const iconScale = useRef(new Animated.Value(1)).current;
+  const chevronX = useRef(new Animated.Value(0)).current;
+  const shadowOpacity = useRef(new Animated.Value(0.12)).current;
+
+  const animateTo = (
+    toScale: number,
+    toIconScale: number,
+    toChevronX: number,
+    toShadow: number
+  ) => {
+    Animated.parallel([
+      Animated.spring(scale, {
+        toValue: toScale,
+        useNativeDriver: true,
+        speed: 30,
+        bounciness: 6,
+      }),
+      Animated.spring(iconScale, {
+        toValue: toIconScale,
+        useNativeDriver: true,
+        speed: 30,
+        bounciness: 8,
+      }),
+      Animated.spring(chevronX, {
+        toValue: toChevronX,
+        useNativeDriver: true,
+        speed: 30,
+        bounciness: 8,
+      }),
+      Animated.timing(shadowOpacity, {
+        toValue: toShadow,
+        duration: 120,
+        useNativeDriver: false,
+      }),
+    ]).start();
+  };
+
+  const handlePressIn = () => animateTo(0.97, 1.08, 4, 0.05);
+  const handlePressOut = () => animateTo(1, 1, 0, 0.12);
+
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <View style={[styles.iconContainer, { backgroundColor: colorBg }]}>
-        <Ionicons name={icon} size={22} color={colorIcon}/>
-      </View>
+    <Pressable
+      onPress={onPress}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
+      hitSlop={4}
+    >
+      <Animated.View
+        style={[
+          styles.container,
+          {
+            transform: [{ scale }],
+            shadowOpacity,
+          },
+        ]}
+      >
+        <Animated.View
+          style={[
+            styles.iconContainer,
+            {
+              backgroundColor: colorBg,
+              transform: [{ scale: iconScale }],
+            },
+          ]}
+        >
+          <Ionicons name={icon} size={22} color={colorIcon} />
+        </Animated.View>
 
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
-      </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.title} numberOfLines={1}>
+            {title}
+          </Text>
+          <Text style={styles.subtitle} numberOfLines={2}>
+            {subtitle}
+          </Text>
+        </View>
 
-      <Ionicons name="chevron-forward" size={20} color="#999" />
+        <Animated.View style={{ transform: [{ translateX: chevronX }] }}>
+          <Ionicons name="chevron-forward" size={20} color="#A0AEC0" />
+        </Animated.View>
+      </Animated.View>
     </Pressable>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#ffffff86",
+    backgroundColor: "#FFFFFF",
     padding: 16,
-    borderRadius: 14,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "#EEF1F6",
     elevation: 2,
-    shadowColor: "#0000003b",
+    shadowColor: "#1A2233",
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
+    shadowRadius: 10,
     marginBottom: 14,
   },
 
@@ -64,11 +137,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: "600",
+    color: "#1F2937",
     marginBottom: 2,
   },
 
   subtitle: {
     fontSize: 13,
     color: "#6B7280",
+    lineHeight: 17,
   },
 });
