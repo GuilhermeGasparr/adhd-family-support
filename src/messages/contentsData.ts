@@ -316,6 +316,28 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
+        heading: "Principais medicamentos utilizados no tratamento do TDAH",
+        content: [
+          "Os medicamentos utilizados no tratamento do TDAH ajudam a reduzir sintomas como desatenção, hiperatividade e impulsividade, facilitando o aprendizado, a organização das atividades diárias e as relações sociais. A escolha do medicamento deve ser individualizada e realizada por um médico, considerando a idade da criança, a intensidade dos sintomas, a presença de outras condições de saúde e a resposta ao tratamento. Os principais medicamentos são:",
+            "💊 Metilfenidato",
+            "É o medicamento mais utilizado no tratamento do TDAH. Atua aumentando a disponibilidade de dopamina e noradrenalina no cérebro, neurotransmissores importantes para a atenção e o controle do comportamento. Está disponível em formulações de curta e longa duração.",
+           " 💊 Lisdexanfetamina",
+           "Também é um estimulante do sistema nervoso central. Costuma ser indicada quando há necessidade de um efeito mais prolongado ao longo do dia ou quando o metilfenidato não apresenta o resultado esperado.",
+           " 💊 Atomoxetina",
+           " É um medicamento não estimulante que atua principalmente sobre a noradrenalina. Pode ser indicada para crianças que não podem utilizar estimulantes ou que apresentam efeitos adversos importantes, além de ser uma opção em casos com ansiedade associada.",
+            "💊 Guanfacina",
+           " É um medicamento não estimulante que auxilia principalmente no controle da impulsividade, da hiperatividade e das dificuldades de autorregulação. Em alguns casos, pode ser utilizada isoladamente ou em associação com estimulantes.",
+           " 💊 Clonidina",
+            "Pode ser utilizada quando há dificuldades para dormir, impulsividade acentuada, agressividade ou tiques associados ao TDAH, sempre sob acompanhamento médico." ,     
+            "⚠️ Importante lembrar:", 
+            "- Nem todas as crianças precisam do mesmo medicamento.",
+            "- A dose é ajustada de forma individual e pode ser modificada ao longo do tratamento.",
+            "- O medicamento deve ser utilizado exatamente conforme a prescrição médica.",
+            "- Não interrompa o tratamento por conta própria, mesmo que a criança apresente melhora.",
+            "- Caso ocorram efeitos adversos, converse com o profissional responsável antes de fazer qualquer alteração.",
+        ],
+      },
+      {
         heading: "Só medicação resolve ?",
         content: [
           "Não. O melhor resultado costuma ocorrer com abordagem multimodal, combinando medicação (quando indicada) com intervenções comportamentais, orientações aos pais e estratégias escolares .",
