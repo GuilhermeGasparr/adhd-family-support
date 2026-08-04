@@ -9,6 +9,7 @@ import {
   TextInput,
   Pressable,
   Animated,
+  Image,
 } from "react-native";
 import ChatBubble from "@/components/ChatBubble";
 import TypingIndicator from "@/components/TypingIndicator";
@@ -91,7 +92,11 @@ export default function Chatbot() {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.botAvatar}>
-          <Text style={styles.botAvatarEmoji}>🤖</Text>
+          <Image
+            source={require("@/assets/avatar-02.png")}
+            style={styles.botAvatarImage}
+            resizeMode="cover"
+          />
         </View>
         <View style={{ flex: 1 }}>
           <Text style={styles.headerTitle}>Assistente TDAH Apoio</Text>
@@ -174,10 +179,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
+    overflow: "hidden",
   },
 
-  botAvatarEmoji: {
-    fontSize: 20,
+  botAvatarImage: {
+    width: "100%",
+    height: "100%",
   },
 
   headerTitle: {

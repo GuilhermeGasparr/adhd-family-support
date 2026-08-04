@@ -96,7 +96,7 @@ function ChatFab() {
             useNativeDriver: true,
           }),
           Animated.delay(900),
-        ])
+        ]),
       );
       halo.start();
 
@@ -117,7 +117,7 @@ function ChatFab() {
       ]).start(() => setShowLabel(false));
 
       return () => halo.stop();
-    }, [])
+    }, []),
   );
 
   function handlePress() {
@@ -145,27 +145,37 @@ function ChatFab() {
         </Animated.View>
       )}
 
-      <Animated.View style={{ transform: [{ scale: fabScale }] }}>
-        <Animated.View
-          style={[
-            styles.fabHalo,
-            {
-              opacity: haloOpacity,
-              transform: [{ scale: haloScale }],
-            },
-          ]}
-        />
+      <Animated.View
+        style={{
+          transform: [{ scale: fabScale }, { translateY: 5 }],
+        }}
+      >
+        <Animated.View style={styles.fabCenterWrap}>
+          <Animated.View
+            style={[
+              styles.fabHalo,
+              {
+                opacity: haloOpacity,
+                transform: [{ scale: haloScale }],
+              },
+            ]}
+          />
 
-        <Animated.View style={{ transform: [{ scale: pressScale }] }}>
-          <Pressable
-            onPress={handlePress}
-            style={styles.fab}
-            hitSlop={10}
-            accessibilityRole="button"
-            accessibilityLabel="Abrir assistente virtual"
-          >
-            <Ionicons name="chatbubble-ellipses" size={26} color="#FFF" />
-          </Pressable>
+          <Animated.View style={{ transform: [{ scale: pressScale }] }}>
+            <Pressable
+              onPress={handlePress}
+              style={styles.fab}
+              hitSlop={10}
+              accessibilityRole="button"
+              accessibilityLabel="Abrir assistente virtual"
+            >
+              <Image
+                source={require("@/assets/avatar-02.png")}
+                style={styles.fabAvatar}
+                resizeMode="cover"
+              />
+            </Pressable>
+          </Animated.View>
         </Animated.View>
       </Animated.View>
     </View>
@@ -597,14 +607,21 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
 
-  fab: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: "#089D9A",
+  fabCenterWrap: {
+    width: 64,
+    height: 64,
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#089D9A",
+  },
+
+  fab: {
+    width: 58,
+    height: 58,
+    borderRadius: 29,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    backgroundColor: "#fff",
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.4,
     shadowRadius: 12,
@@ -613,12 +630,17 @@ const styles = StyleSheet.create({
 
   fabHalo: {
     position: "absolute",
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 64,
+    height: 64,
+    borderRadius: 32,
     backgroundColor: "#089D9A",
   },
 
+  fabAvatar: {
+    width: "100%",
+    height: 75,
+    transform: [{translateY: 4}]
+  },
   fabLabel: {
     backgroundColor: "#1A2036",
     paddingHorizontal: 14,

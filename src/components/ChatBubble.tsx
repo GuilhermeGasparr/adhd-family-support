@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { StyleSheet, Text, View, Animated } from "react-native";
+import { StyleSheet, Text, View, Animated, Image } from "react-native";
 import { Message } from "../types/message";
 
 type Props = {
@@ -40,15 +40,16 @@ export default function ChatBubble({ message, index = 0 }: Props) {
     >
       {!isUser && (
         <View style={styles.avatar}>
-          <Text style={styles.avatarEmoji}>🤖</Text>
+          <Image
+            source={require("@/assets/avatar-02.png")}
+            style={styles.avatarImage}
+            resizeMode="cover"
+          />
         </View>
       )}
 
       <View
-        style={[
-          styles.bubble,
-          isUser ? styles.userBubble : styles.botBubble,
-        ]}
+        style={[styles.bubble, isUser ? styles.userBubble : styles.botBubble]}
       >
         <Text style={[styles.text, isUser && styles.userText]}>
           {message.text}
@@ -82,10 +83,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 8,
+    overflow: "hidden",
   },
 
-  avatarEmoji: {
-    fontSize: 15,
+  avatarImage: {
+    width: "100%",
+    height: "100%",
   },
 
   bubble: {
