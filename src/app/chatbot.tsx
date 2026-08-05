@@ -23,7 +23,7 @@ export default function Chatbot() {
     {
       id: "1",
       sender: "bot",
-      text: "👋 Olá! Sou a assistente virtual do TDAH Apoio. Posso responder dúvidas sobre TDAH utilizando a base de conhecimento do aplicativo. Como posso ajudar?",
+      text: "👋 Olá! Sou o assistente virtual Lumigo. Posso responder dúvidas e fornecer informações para as famílias sobre TDAH. Como posso ajudar?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -99,7 +99,7 @@ export default function Chatbot() {
           />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={styles.headerTitle}>Assistente TDAH Apoio</Text>
+          <Text style={styles.headerTitle}>Assistente Lumigo!</Text>
           <View style={styles.statusRow}>
             <View style={styles.statusDot} />
             <Text style={styles.statusText}>Online agora</Text>

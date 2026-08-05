@@ -141,7 +141,7 @@ function ChatFab() {
     <View style={styles.fabWrapper} pointerEvents="box-none">
       {showLabel && (
         <Animated.View style={[styles.fabLabel, { opacity: labelOpacity }]}>
-          <Text style={styles.fabLabelText}>Precisa de ajuda? 💬</Text>
+          <Text style={styles.fabLabelText}>Olá! Me chamo Lumigo e estou aqui para tirar suas dúvidas 💬</Text>
         </Animated.View>
       )}
 
