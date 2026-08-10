@@ -14,8 +14,7 @@ import {
 } from "react-native";
 
 const { width } = Dimensions.get("window");
-const IMAGE_HEIGHT = 280;
-
+const IMAGE_HEIGHT = 650;
 export default function DetailScreen() {
   const { contentId } = useLocalSearchParams<{ contentId: string }>();
   const data = contentsData[contentId];
@@ -132,7 +131,11 @@ export default function DetailScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
 
       {/* Back Button — fixed above everything */}
       <Animated.View
@@ -161,7 +164,7 @@ export default function DetailScreen() {
         scrollEventThrottle={16}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          { useNativeDriver: true }
+          { useNativeDriver: true },
         )}
         contentContainerStyle={styles.scrollContent}
       >
@@ -181,9 +184,10 @@ export default function DetailScreen() {
           {data.image ? (
             <Image source={{ uri: data.image }} style={styles.image} />
           ) : (
-            <View style={styles.placeholder}>
-              <Text style={styles.placeholderEmoji}>📘</Text>
-            </View>
+            <Image
+              source={require("../../assets/familia-tdah2.png")}
+              style={styles.image}
+            />
           )}
         </Animated.View>
 
@@ -251,6 +255,7 @@ const styles = StyleSheet.create({
     width: "100%",
     overflow: "hidden",
   },
+
   image: {
     width: "100%",
     height: "100%",
@@ -282,7 +287,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.10,
+    shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 8,
   },

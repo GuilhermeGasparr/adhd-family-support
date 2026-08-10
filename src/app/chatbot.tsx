@@ -17,6 +17,7 @@ import { Message } from "../types/message";
 import { useRef, useState } from "react";
 import { askChatbot } from "@/services/chatbotService";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
@@ -91,6 +92,17 @@ export default function Chatbot() {
     <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       {/* Header */}
       <View style={styles.header}>
+        <Pressable
+          onPress={() => router.back()}
+          style={({ pressed }) => [
+            styles.backButton,
+            pressed && styles.backButtonPressed,
+          ]}
+          hitSlop={12}
+        >
+          <Ionicons name="arrow-back" size={22} color="#1E2233" />
+        </Pressable>
+
         <View style={styles.botAvatar}>
           <Image
             source={require("@/assets/avatar-02.png")}
@@ -98,6 +110,7 @@ export default function Chatbot() {
             resizeMode="cover"
           />
         </View>
+
         <View style={{ flex: 1 }}>
           <Text style={styles.headerTitle}>Assistente Lumigo!</Text>
           <View style={styles.statusRow}>
@@ -211,7 +224,20 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#7A8296",
   },
+  backButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "#F2F4F8",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
 
+  backButtonPressed: {
+    opacity: 0.7,
+    transform: [{ scale: 0.95 }],
+  },
   listContent: {
     paddingVertical: 12,
     paddingHorizontal: 4,
