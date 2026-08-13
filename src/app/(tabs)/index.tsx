@@ -10,6 +10,7 @@ import {
   Text,
   View,
   Easing,
+  Dimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router, useFocusEffect } from "expo-router";
@@ -141,7 +142,9 @@ function ChatFab() {
     <View style={styles.fabWrapper} pointerEvents="box-none">
       {showLabel && (
         <Animated.View style={[styles.fabLabel, { opacity: labelOpacity }]}>
-          <Text style={styles.fabLabelText}>Olá! Me chamo Lumigo e estou aqui para tirar suas dúvidas 💬</Text>
+          <Text style={styles.fabLabelText}>
+            Olá! Me chamo Lumigo e estou aqui para tirar suas dúvidas 💬
+          </Text>
         </Animated.View>
       )}
 
@@ -187,7 +190,7 @@ function ChatFab() {
 export default function Index() {
   const { t } = useTranslation("translation");
 
-  // Animation refs — one per animated block
+  // Animation refs
   const headerOpacity = useRef(new Animated.Value(0)).current;
   const headerTranslateY = useRef(new Animated.Value(-16)).current;
 
@@ -209,9 +212,7 @@ export default function Index() {
 
   const sectionOpacity = useRef(new Animated.Value(0)).current;
 
-  // Reset all values then play animations — called every time screen is focused
   const playAnimations = useCallback(() => {
-    // Reset
     headerOpacity.setValue(0);
     headerTranslateY.setValue(-16);
     welcomeOpacity.setValue(0);
@@ -229,7 +230,6 @@ export default function Index() {
     sectionOpacity.setValue(0);
 
     Animated.stagger(80, [
-      // Header
       Animated.parallel([
         Animated.timing(headerOpacity, {
           toValue: 1,
@@ -243,7 +243,6 @@ export default function Index() {
           useNativeDriver: true,
         }),
       ]),
-      // Welcome card
       Animated.parallel([
         Animated.timing(welcomeOpacity, {
           toValue: 1,
@@ -263,13 +262,11 @@ export default function Index() {
           useNativeDriver: true,
         }),
       ]),
-      // Section label
       Animated.timing(sectionOpacity, {
         toValue: 1,
         duration: 300,
         useNativeDriver: true,
       }),
-      // Cards staggered
       Animated.parallel([
         Animated.timing(card1Opacity, {
           toValue: 1,
@@ -330,7 +327,6 @@ export default function Index() {
     ]).start();
   }, []);
 
-  // Triggers every time this screen comes into focus
   useFocusEffect(
     useCallback(() => {
       playAnimations();
@@ -343,7 +339,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContainer}
       >
-        {/* ── Header ── */}
+        {/* ── Header com Imagem ── */}
         <Animated.View
           style={[
             styles.header,
@@ -353,7 +349,16 @@ export default function Index() {
             },
           ]}
         >
-          <View style={{ flex: 1 }}>
+          {/* Banner no topo da tela */}
+          <View style={styles.heroBannerContainer}>
+            <Image
+              source={require("@/assets/familia-tdah2.png")}
+              style={styles.heroBannerImage}
+              resizeMode="cover"
+            />
+          </View>
+
+          <View style={styles.headerTextContainer}>
             <Text style={styles.headerEyebrow}>Bem-vindo</Text>
             <Text style={styles.headerTitle}>{t("Header.title")}</Text>
             <Text style={styles.headerSubtitle}>{t("Header.subtitle")}</Text>
@@ -374,11 +379,10 @@ export default function Index() {
               },
             ]}
           >
-            {/* Top row: icon + greeting */}
             <View style={styles.welcomeTop}>
               <View style={styles.iconBubble}>
                 <Image
-                  source={require("../../assets/icon-welcome.png")}
+                  source={require("@/assets/icon-welcome.png")}
                   style={styles.welcomeIcon}
                 />
               </View>
@@ -389,7 +393,6 @@ export default function Index() {
               </View>
             </View>
 
-            {/* Info banner */}
             <View style={styles.infoBanner}>
               <Ionicons
                 name="information-circle-outline"
@@ -492,11 +495,23 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    paddingHorizontal: 22,
-    paddingTop: 20,
-    paddingBottom: 4,
-    flexDirection: "row",
-    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingTop: 12,
+  },
+  heroBannerContainer: {
+    width: "100%",
+    height: 360,
+    borderRadius: 20,
+    overflow: "hidden",
+    marginBottom: 16,
+    backgroundColor: "#3EBFF",
+  },
+  heroBannerImage: {
+    width: "100%",
+    height: "100%",
+  },
+  headerTextContainer: {
+    paddingHorizontal: 6,
   },
   headerEyebrow: {
     fontSize: 12,
@@ -521,7 +536,7 @@ const styles = StyleSheet.create({
 
   container: {
     paddingHorizontal: 16,
-    marginTop: 20,
+    marginTop: 16,
   },
 
   welcomeCard: {
@@ -588,7 +603,7 @@ const styles = StyleSheet.create({
   sectionEyebrow: {
     fontSize: 12,
     fontWeight: "700",
-    color: "#cecece",
+    color: "#8A94A6",
     letterSpacing: 1,
     textTransform: "uppercase",
     marginBottom: 4,
@@ -639,7 +654,7 @@ const styles = StyleSheet.create({
   fabAvatar: {
     width: "100%",
     height: 75,
-    transform: [{translateY: 4}]
+    transform: [{ translateY: 4 }],
   },
   fabLabel: {
     backgroundColor: "#1A2036",
