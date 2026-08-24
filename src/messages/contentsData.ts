@@ -132,7 +132,7 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "Meu filho não me ouve, é TDAH ?",
+        heading: "Meu filho não atende aos meu comandos, é TDAH?",
         content: [
           "Pode ser, mas não é possível concluir apenas por esse comportamento. Dificuldades em “ouvir” podem estar ligadas à desatenção, impulsividade ou até a fatores situacionais. É importante observar se há um padrão persistente, em diferentes contextos, com impacto no funcionamento. Uma avaliação profissional é o caminho adequado .",
         ],
@@ -204,9 +204,9 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "Questionários como auxiliadores no Diagnóstico",
+        heading: " O uso de questionários validados auxiliam o diagnóstico?",
         content: [
-          "Escalas e questionários padronizados ajudam a organizar informações de pais e professores, identificar padrões de sintomas e monitorar evolução. Não substituem a avaliação clínica completa .",
+          "Escalas e questionários padronizados ajudam a organizar informações de pais e professores, identificar padrões de sintomas e monitorar evolução. É importante informar que os questionários aqui citados tratam-se de questionários ou escalas validadas cientificamente, e ainda assim, não substituem a avaliação clínica completa .",
         ],
       },
       {
@@ -229,6 +229,12 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
+        heading: "O que é reforço positivo ?",
+        content: [
+          "É a utilização de elogios ou recompensas após um comportamento adequado, com o objetivo de aumentar a probabilidade de que ele se repita .",
+        ],
+      },
+      {
         heading: "Mudanças bruscas de rotina prejudicam ?",
         content: [
           "Sim! Crianças com TDAH tendem a responder melhor a ambientes previsíveis. Mudanças inesperadas podem aumentar a desorganização e a dificuldade de adaptação.",
@@ -241,13 +247,13 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "Regulação Emocional da criança",
+        heading: "Como ajudar a criança na sua regulação emocional?",
         content: [
           "Auxilie a criança a identificar e nomear emoções, ensine estratégias simples como pausa, respiração e afastamento momentâneo da situação, e modele respostas mais adequadas diante de frustrações .",
         ],
       },
       {
-        heading: "Orientações práticas para o contexto escolar",
+        heading: "Quais orientações práticas para o contexto escolar?",
         content: [
           "A comunicação entre família e escola é fundamental para alinhar estratégias, monitorar o comportamento em diferentes contextos e oferecer suporte consistente.",
         ],
@@ -271,12 +277,6 @@ export const contentsData: Record<string, ContentItem> = {
         ],
       },
       {
-        heading: "O que é reforço positivo ?",
-        content: [
-          "É a utilização de elogios ou recompensas após um comportamento adequado, com o objetivo de aumentar a probabilidade de que ele se repita .",
-        ],
-      },
-      {
         heading:
           "Como um estabelecimento de rotina ajuda no processo de desenvolvimento infantil ?",
         content: [
@@ -285,19 +285,19 @@ export const contentsData: Record<string, ContentItem> = {
       },
 
       {
-        heading: "Melhorando a Atenção da Criança",
+        heading: "Como melhorar a Atenção da Criança?",
         content: [
           "Divida tarefas em etapas curtas, intercale pausas breves, utilize cronômetros ou timers visuais e reduza estímulos distratores. Instruções claras, metas específicas e feedback imediato ajudam a manter o foco e a persistência.",
         ],
       },
       {
-        heading: "Treinamento Parental",
+        heading: "Treinamento dos pais melhora o comportamento da criança?",
         content: [
           "Programas de treinamento parental têm boa evidência para melhorar manejo comportamental, relação familiar e sintomas funcionais, especialmente em crianças menores.",
         ],
       },
       {
-        heading: "Estratégias para organização da rotina escolar",
+        heading: "Quais estratégias para organização da rotina escolar?",
         content: [
           "Utilize horários fixos, previsíveis e consistentes, com apoio de listas e recursos visuais. Divida tarefas longas em etapas menores, estabeleça prioridades claras e mantenha um ambiente com poucos estímulos distratores. A previsibilidade favorece a autonomia e a execução das atividades.",
         ],
